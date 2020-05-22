@@ -1,0 +1,341 @@
+<div class="home-one">
+  <app-page-header></app-page-header>
+  <!-- Banner section start -->
+  <section class="banner v3">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-12 m-auto">
+          <div class="ban-content text-center">
+            <h1>Money Transfer Service <br> World Wide</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Quis ipsum suspe ultrices gravida. <br> Risus commodo viverra maecenas .</p>
+          </div>
+          <form class="currency-form-v2" action="#">
+            <h4>Send Money</h4>
+            <div class="form-field">
+              <div class="curr-select">
+                <span class="selected">
+                  <img src="assets/images/flags/{{main}}.png" alt="">{{mainC}}&nbsp;<i
+                    class="fas fa-caret-down"></i></span>
+                <ul>
+                  <li (click)="selectedCurrency(second)"><a href="javascript:void(0)"><img
+                        src="assets/images/flags/{{second}}.png" alt="">{{secondC}}</a></li>
+                  <li (click)="selectedCurrency(third)"><a href="javascript:void(0)"><img
+                        src="assets/images/flags/{{third}}.png" alt="">{{thirdC}}</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="form-field">
+              <div class="join-field">
+                <input type="text" name="send_amount" (change)="amountChanged($event)" [value]="amount"
+                  placeholder="$1,000.00">
+                <select name="rcv_country">
+                  <option>Select Country</option>
+                  <option value="usa">USA</option>
+                  <option value="canada">Canada</option>
+                  <option value="australia">Australia</option>
+                </select>
+                <button class="btn btn-block btn-filled form-btn"><span class="bh"></span> <span>Send</span></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Banner section end -->
+
+
+  <!-- Overview section start -->
+  <section class="overview bg-offwhite">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 m-auto">
+          <div class="sec-heading">
+            <h2 class="sec-title">Why Choose us</h2>
+            <p class="sec-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="iconBox listBox-shadow">
+            <!-- <img src="assets/images/icons/1.png" alt="" class="img-icon"> -->
+
+            <!-- Roysha icon -->
+            <span class="roysha-icon roysha-fast-transfer"><span class="path1"></span><span class="path2"></span><span
+                class="path3"></span><span class="path4"></span><span class="path5"></span><span
+                class="path6"></span><span class="path7"></span><span class="path8"></span><span
+                class="path9"></span><span class="path10"></span><span class="path11"></span><span
+                class="path12"></span><span class="path13"></span><span class="path14"></span><span
+                class="path15"></span><span class="path16"></span><span class="path17"></span><span
+                class="path18"></span></span>
+
+            <h5><a href="javascript:void(0)">Fast transfer</a></h5>
+            <p>Lorem ipsum dolor sitame coctetur adipiscing elised do eiusmte</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="iconBox listBox-shadow">
+            <!-- <img src="assets/images/icons/2.png" alt="" class="img-icon"> -->
+
+            <!-- Roysha icon -->
+            <span class="roysha-icon roysha-low-cost"><span class="path1"></span><span class="path2"></span><span
+                class="path3"></span><span class="path4"></span><span class="path5"></span><span
+                class="path6"></span><span class="path7"></span><span class="path8"></span><span
+                class="path9"></span><span class="path10"></span><span class="path11"></span><span
+                class="path12"></span><span class="path13"></span><span class="path14"></span><span
+                class="path15"></span><span class="path16"></span><span class="path17"></span><span
+                class="path18"></span><span class="path19"></span><span class="path20"></span><span
+                class="path21"></span><span class="path22"></span><span class="path23"></span><span
+                class="path24"></span><span class="path25"></span><span class="path26"></span><span
+                class="path27"></span><span class="path28"></span><span class="path29"></span><span
+                class="path30"></span></span>
+
+            <h5><a href="javascript:void(0)">Low cost</a></h5>
+            <p>Lorem ipsum dolor sitame coctetur adipiscing elised do eiusmte</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="iconBox listBox-shadow">
+            <!-- <img src="assets/images/icons/3.png" alt="" class="img-icon"> -->
+
+            <!-- Roysha icon -->
+            <span class="roysha-icon roysha-cash-pin"><span class="path1"></span><span class="path2"></span><span
+                class="path3"></span><span class="path4"></span><span class="path5"></span><span
+                class="path6"></span><span class="path7"></span><span class="path8"></span><span
+                class="path9"></span><span class="path10"></span><span class="path11"></span></span>
+
+            <h5><a href="javascript:void(0)">Trusted service</a></h5>
+            <p>Lorem ipsum dolor sitame coctetur adipiscing elised do eiusmte</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="iconBox listBox-shadow">
+            <!-- <img src="assets/images/icons/1.png" alt="" class="img-icon"> -->
+
+            <!-- Roysha icon -->
+            <span class="roysha-icon roysha-support"><span class="path1"></span><span class="path2"></span><span
+                class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+
+            <h5><a href="javascript:void(0)">24/7 Active services</a></h5>
+            <p>Lorem ipsum dolor sitame coctetur adipiscing elised do eiusmte</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Overview section end -->
+
+  <!-- Services section start -->
+  <section class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 m-auto">
+          <div class="sec-heading">
+            <h2 class="sec-title">What We Do</h2>
+            <p class="sec-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 m-auto">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="iconBox boxed-shadow text-center">
+                <!-- <img src="assets/images/icons/1.png" alt="" class="img-icon"> -->
+
+                <!-- Roysha icon -->
+                <span class="roysha-icon roysha-diposite"><span class="path1"></span><span class="path2"></span><span
+                    class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+
+                <h5><a href="javascript:void(0)">Bank Deposit</a></h5>
+                <p>Lorem ipsum dolor sitame coctetur adipiscing elised do eiusmte</p>
+                <a href="javascript:void(0)" class="btn"><span class="bh"></span> <span>Add bank</span></a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="iconBox boxed-shadow text-center">
+                <!-- <img src="assets/images/icons/2.png" alt="" class="img-icon"> -->
+
+                <!-- Roysha icon -->
+                <span class="roysha-icon roysha-hand-cash"><span class="path1"></span><span class="path2"></span><span
+                    class="path3"></span><span class="path4"></span><span class="path5"></span><span
+                    class="path6"></span><span class="path7"></span><span class="path8"></span><span
+                    class="path9"></span><span class="path10"></span></span>
+
+                <h5><a href="javascript:void(0)">Cash Pickup</a></h5>
+                <p>Lorem ipsum dolor sitame coctetur adipiscing elised do eiusmte</p>
+                <a href="javascript:void(0)" class="btn"><span class="bh"></span> <span>Add bank</span></a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="iconBox boxed-shadow text-center">
+                <!-- <img src="assets/images/icons/3.png" alt="" class="img-icon"> -->
+
+                <!-- Roysha icon -->
+                <span class="roysha-icon roysha-wallet"><span class="path1"></span><span class="path2"></span><span
+                    class="path3"></span><span class="path4"></span><span class="path5"></span><span
+                    class="path6"></span><span class="path7"></span><span class="path8"></span><span
+                    class="path9"></span><span class="path10"></span><span class="path11"></span><span
+                    class="path12"></span><span class="path13"></span><span class="path14"></span></span>
+
+                <h5><a href="javascript:void(0)">Mobile Wallet</a></h5>
+                <p>Lorem ipsum dolor sitame coctetur adipiscing elised do eiusmte</p>
+                <a href="javascript:void(0)" class="btn"><span class="bh"></span> <span>Add bank</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services section end -->
+
+  <!-- Access money section start -->
+  <section class="access-money bg-offwhite">
+    <div class="container">
+      <div class="row align-items-md-center">
+        <div class="col-md-6">
+          <div class="content-box-fluid">
+            <h2>Access your money anytime, anywhere in the world</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas</p>
+            <p>ccumsanamet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+            <a href="javascript:void(0)" class="btn btn-default"><span class="bh"></span> <span>Learn More</span></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-5 offset-lg-1">
+          <div class="overlap-imgBox">
+            <figure class="img-1">
+              <img src="assets/images/mbl-scrn3.jpg" alt="">
+            </figure>
+            <figure class="img-2 abs-img">
+              <img src="assets/images/mbl-scrn4.png" alt="">
+            </figure>
+            <a href="javascript:void(0)" class="btn"><span class="bh"></span> <span>&#10230;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Access money section end -->
+
+  <!-- Online payment section start -->
+  <section class="online-payment">
+    <div class="container-fluid">
+      <div class="row align-items-md-center">
+        <div class="col-md-6 nopadd-rth">
+          <figure class="imgBox">
+            <!-- <img src="assets/images/laptop.png" alt=""> -->
+            <img src="assets/images/ani4/2.png" alt="" class="ani4 ani4img1">
+            <img src="assets/images/ani4/3.png" alt="" class="ani4 ani4img2">
+            <img src="assets/images/ani4/1.png" alt="" class="ani4">
+          </figure>
+        </div>
+        <div class="col-md-6">
+          <div class="content-box-fluid left">
+            <h2>Cashout Money Anytime Without Any Charge </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas</p>
+            <p>ccumsanamet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+            <a href="javascript:void(0)" class="btn btn-default"><span class="bh"></span> <span>Find a
+                Location</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Online payment section end -->
+
+  <!-- Video section start -->
+  <section class="video">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 m-auto text-center">
+          <div class="sec-heading">
+            <h2 class="sec-title">We Bring Best Offer For You</h2>
+            <p class="sec-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+          </div>
+          <a href="https://vimeo.com/191947042" class="video-btn" data-fancybox><i class="fas fa-play"></i></a>
+          <a href="javascript:void(0)" class="btn btn-outline btn-round"><span class="bh"></span> <span>View More
+              Offers</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Video section end -->
+
+  <!-- Partners section start -->
+  <section class="partners">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 m-auto">
+          <div class="sec-heading">
+            <span class="tagline">Our Partners</span>
+            <h2 class="sec-title">Our Partner Programs</h2>
+            <p class="sec-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="partners-logo owl-carousel">
+            <a href="javascript:void(0)"><img src="assets/images/partners/1.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="assets/images/partners/2.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="assets/images/partners/3.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="assets/images/partners/4.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="assets/images/partners/5.png" alt=""></a>
+            <a href="javascript:void(0)"><img src="assets/images/partners/6.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Partners section end -->
+
+  <!-- App section start -->
+  <section class="app bg-offwhite">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="content-box">
+            <h2>Download Our Mobile Apps</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas</p>
+            <ul class="list">
+              <li><i class="fas fa-check-circle"></i> Lorem ipsum dolor sit amet, consectetur adipiscing. </li>
+              <li><i class="fas fa-check-circle"></i> Rabore ettoram dolore magna aliquis ipsum.</li>
+              <li><i class="fas fa-check-circle"></i> Pouis ipsum suspendisse ultrices gravida.</li>
+            </ul>
+            <a href="javascript:void(0)" class="btn btn-default icon-left"><span class="bh"></span> <span><i
+                  class="fab fa-android"></i>
+                Google play</span></a>
+            <a href="javascript:void(0)" class="btn btn-default icon-left"> <span class="bh"></span> <span><i
+                  class="fab fa-apple"></i>App
+                store</span></a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <figure class="imgBox">
+            <!-- <img src="assets/images/app-img.png" alt=""> -->
+            <img src="assets/images/ani5/1.png" alt="" class="ani5 ani5img1">
+            <img src="assets/images/ani5/2.png" alt="" class="ani5 ani5img2">
+            <img src="assets/images/ani5/3.png" alt="" class="ani5 ani5img3">
+            <img src="assets/images/ani5/4.png" alt="" class="ani5 ani5img4">
+            <img src="assets/images/ani5/5.png" alt="" class="ani5 ani5img5">
+            <img src="assets/images/ani5/6.png" alt="" class="ani5 ani5img6">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- App section end -->
+  <app-page-footer></app-page-footer>
+</div>
