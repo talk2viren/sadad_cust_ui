@@ -1,10 +1,24 @@
 import {Component, OnInit} from "@angular/core";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpHeaders } from "@angular/common/http";
+import { UserService } from "../../../app/services/user.service";
 
 declare let $: any;
 
-@Component({selector: "app-page-login", templateUrl: "./page-login.component.html", styleUrls: ["./page-login.component.scss"]})
+@Component({selector: "app-page-login", 
+templateUrl: "./page-login.component.html", 
+styleUrls: ["./page-login.component.scss"]
+})
 export class PageLoginComponent implements OnInit {
-  constructor() {}
+
+  // Public params
+	loginForm: FormGroup;
+	loading = false;
+	
+  constructor( private fb: FormBuilder,
+               private router: Router,
+               private user:UserService) {}
 
   initialization() {
     //======================
@@ -33,7 +47,96 @@ export class PageLoginComponent implements OnInit {
     });
   }
 
+  
+ 
+
   ngOnInit() {
+    this.initLoginForm();
     this.initialization();
+    
   }
+
+  initLoginForm() {
+		this.loginForm = this.fb.group({
+			email: ['', Validators.compose([
+				Validators.required,
+				Validators.email,
+				Validators.minLength(3),
+				Validators.maxLength(320)
+			])
+			],
+			password: ['', Validators.compose([
+				Validators.required,
+				Validators.minLength(3),
+				Validators.maxLength(100)
+			])
+			]
+		});
+  }
+  
+  /**
+	 * Form Submit
+	 */
+	submit() {
+   
+		const controls = this.loginForm.controls;
+		/** check form */
+		if (this.loginForm.invalid) {
+			Object.keys(controls).forEach(controlName =>
+				controls[controlName].markAsTouched()
+			);
+			return;
+		}
+
+		this.loading = true;
+		
+		const formData: FormData = new FormData();
+		formData.append("email", this.loginForm.value.email);
+		formData.append("password", this.loginForm.value.password);
+	
+		
+		const httpHeaders = new HttpHeaders();
+		httpHeaders.append('Content-Type','multipart/form-data');
+		
+		this.user.login(formData).subscribe((res: any)=>{
+			console.log(res)
+			    if(res){
+					
+					localStorage.setItem("token",res.token)
+          localStorage.setItem("currentUserId",res.result[0].id)
+					localStorage.setItem("currentUserRole",res.result[0].access)
+				
+					this.user.UserRole=localStorage.getItem('currentUserRole')
+					this.user.UserId=localStorage.getItem('currentUserId')
+					console.log(this.user.UserRole);
+				
+					if(this.user.UserRole=='User')
+					{
+						this.router.navigate(['/home-01']);
+
+					}else{
+						this.loading = true;
+						const message = `Authentication Failed.`;
+						
+						this.loading = false;
+						this.router.navigate(['/login']);
+					}
+				}else{
+					this.loading = true;
+					const message = `Authentication Failed.`;
+				
+					this.loading = false;
+					this.router.navigate(['/login']);
+				}
+			
+			}, (err)=>{
+				this.loading = true;
+				const message = `Authentication Failed.`;
+				this.loading = false;
+				this.router.navigate(['/login']);
+			
+			}
+		)
+	
+	}
 }

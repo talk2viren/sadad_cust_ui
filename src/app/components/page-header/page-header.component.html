@@ -43,9 +43,12 @@
           </ul>
         </li>
         <li><a routerLink="/contact">Contact</a></li>
-        <li><a routerLink="/login" class="login btn btn-outline btn-round"><span class="bh"></span>
+        <!-- <li><a routerLink="/login" class="login btn btn-outline btn-round"><span class="bh"></span>
             <span>login</span></a>
-        </li>
+        </li> -->
+        <li><a (click)="logout()" class="login btn btn-outline btn-round"><span class="bh"></span>
+          <span>LogOut</span></a>
+      </li>
       </ul>
     </nav>
   </div>

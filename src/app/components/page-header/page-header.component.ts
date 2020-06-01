@@ -1,10 +1,11 @@
 import {Component, OnInit} from "@angular/core";
+import { Router } from "@angular/router";
 
 declare let $: any;
 
 @Component({selector: "app-page-header", templateUrl: "./page-header.component.html", styleUrls: ["./page-header.component.scss"]})
 export class PageHeaderComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   initialization() {
     //======================
@@ -48,4 +49,12 @@ export class PageHeaderComponent implements OnInit {
   ngOnInit() {
     this.initialization();
   }
+
+  logout() {
+		localStorage.removeItem('token');
+		localStorage.removeItem('currentUserId');
+		localStorage.removeItem('currentUserRole');
+		this.router.navigate(['/login']);
+		//this.store.dispatch(new Logout());
+	}
 }

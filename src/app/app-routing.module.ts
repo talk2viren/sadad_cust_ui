@@ -81,11 +81,18 @@ const routes: Routes = [
   }, {
     path: "coming-soon",
     component: PageComingSoonComponent
-  }, {
+  }, 
+  // {
+  //   path: "",
+  //   redirectTo: "/home-01",
+  //   pathMatch: "full"
+  // },
+  {
     path: "",
-    redirectTo: "/home-01",
+    redirectTo: "/login",
     pathMatch: "full"
-  }, {
+  },
+   {
     path: "**",
     component: PageNotFoundComponent,
     data: {

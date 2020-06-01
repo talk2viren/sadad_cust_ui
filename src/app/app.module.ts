@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +28,7 @@ import { PageLandingReceiveComponent } from './components/page-landing-receive/p
 import { PageHowItWorksReceiveComponent } from './components/page-how-it-works-receive/page-how-it-works-receive.component';
 import { PageHowItWorksSendComponent } from './components/page-how-it-works-send/page-how-it-works-send.component';
 import { PageHowItWorksPaybillsComponent } from './components/page-how-it-works-paybills/page-how-it-works-paybills.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -52,9 +57,13 @@ import { PageHowItWorksPaybillsComponent } from './components/page-how-it-works-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
