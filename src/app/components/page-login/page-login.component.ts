@@ -15,6 +15,7 @@ export class PageLoginComponent implements OnInit {
   // Public params
 	loginForm: FormGroup;
 	loading = false;
+	message:any;
 	
   constructor( private fb: FormBuilder,
                private router: Router,
@@ -61,14 +62,14 @@ export class PageLoginComponent implements OnInit {
 			email: ['', Validators.compose([
 				Validators.required,
 				Validators.email,
-				Validators.minLength(3),
-				Validators.maxLength(320)
+				// Validators.minLength(3),
+				// Validators.maxLength(320)
 			])
 			],
 			password: ['', Validators.compose([
 				Validators.required,
-				Validators.minLength(3),
-				Validators.maxLength(100)
+				// Validators.minLength(3),
+				// Validators.maxLength(100)
 			])
 			]
 		});
@@ -103,7 +104,7 @@ export class PageLoginComponent implements OnInit {
 			    if(res){
 					
 					localStorage.setItem("token",res.token)
-          localStorage.setItem("currentUserId",res.result[0].id)
+                    localStorage.setItem("currentUserId",res.result[0].id)
 					localStorage.setItem("currentUserRole",res.result[0].access)
 				
 					this.user.UserRole=localStorage.getItem('currentUserRole')
@@ -113,17 +114,17 @@ export class PageLoginComponent implements OnInit {
 					if(this.user.UserRole=='User')
 					{
 						this.router.navigate(['/home-01']);
-
+						
 					}else{
 						this.loading = true;
-						const message = `Authentication Failed.`;
+						this.message = `Authentication Failed.`;
 						
 						this.loading = false;
 						this.router.navigate(['/login']);
 					}
 				}else{
 					this.loading = true;
-					const message = `Authentication Failed.`;
+					this.message = `Authentication Failed.`;
 				
 					this.loading = false;
 					this.router.navigate(['/login']);
@@ -131,12 +132,22 @@ export class PageLoginComponent implements OnInit {
 			
 			}, (err)=>{
 				this.loading = true;
-				const message = `Authentication Failed.`;
+				this.message = `Authentication Failed.`;
 				this.loading = false;
 				this.router.navigate(['/login']);
 			
 			}
 		)
 	
+	}
+
+	isControlHasError(controlName: string, validationType: string): boolean {
+		const control = this.loginForm.controls[controlName];
+		if (!control) {
+			return false;
+		}
+
+		const result = control.hasError(validationType) && (control.dirty || control.touched);
+		return result;
 	}
 }

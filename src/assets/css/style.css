@@ -2906,4 +2906,21 @@ img.an1.animg5 {
 .ani7 {
   transform-origin: 47.3% 50%; }
 
+.shadow-box
+{
+ 
+  height: 250px;
+  width: 80%;
+  background-color:#bde9f7de;
+}
+
+.box1{
+  margin-bottom: 60px;
+}
+
+.box{
+  
+  margin-right: -60px;
+}
+
 /*# sourceMappingURL=style.css.map */
