@@ -29,6 +29,9 @@ import { PageHowItWorksReceiveComponent } from './components/page-how-it-works-r
 import { PageHowItWorksSendComponent } from './components/page-how-it-works-send/page-how-it-works-send.component';
 import { PageHowItWorksPaybillsComponent } from './components/page-how-it-works-paybills/page-how-it-works-paybills.component';
 import { UserService } from './services/user.service';
+import { UserLoanComponent } from './components/user-loan/user-loan.component';
+import { PayLoanComponent } from './components/pay-loan/pay-loan.component';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +56,9 @@ import { UserService } from './services/user.service';
     PageLandingReceiveComponent,
     PageHowItWorksReceiveComponent,
     PageHowItWorksSendComponent,
-    PageHowItWorksPaybillsComponent
+    PageHowItWorksPaybillsComponent,
+    UserLoanComponent,
+    PayLoanComponent
   ],
   imports: [
     BrowserModule,

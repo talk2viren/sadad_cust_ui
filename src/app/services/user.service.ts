@@ -29,6 +29,34 @@ login(FormData){
     );
 }
 
+userLoan(FormData){
+    return this.http.post(this.endpoint + 'payment/userLoan',FormData)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+  
+          //Handle the error here
+  
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
+
+  payLoan(FormData){
+    return this.http.post(this.endpoint + 'payment/paidLoan',FormData)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+  
+          //Handle the error here
+  
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
+
 handleError(error) {
   let errorMessage = '';
   if (error.error instanceof ErrorEvent) {

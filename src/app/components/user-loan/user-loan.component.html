@@ -1,0 +1,83 @@
+<div class="home-one">
+  <app-page-header></app-page-header>
+   <!-- Banner section start -->
+   <section class="banner v1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 m-auto">
+          <div class="ban-content text-center">
+            <h1>Transfer Money Across World in Real Time <br>With No Charge</h1>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore <br> magna aliqua. Quis ipsum suspe ultrices gravida. Risus commodo viverra maecenas .</p> -->
+            <!-- <a routerLink="/landing-page-send" class="btn btn-default"><span class="bh"></span> <span>Send Money</span>
+            </a>
+            <a routerLink="/landing-page-receive" class="btn btn-outline btn-round"><span class="bh"></span>
+              <span>Receive
+                Money</span></a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Banner section end -->
+  <section>
+    <div class="container" style=" width: 80%;font-size:12px;">
+        <table id="example" class="table table-striped table-bordered" style="width:100%;">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Collector Name</th>
+                    <th>Total Amount</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Monthly Payment</th>
+                    <th>Due Amount</th>
+                    <th>Total Amount to be Pay</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let list of userloanlist">
+                    <td>{{list.id}}</td>
+                    <td>{{list.fullname}}</td>
+                    <td>{{list.total_amount}}</td>
+                    <td>{{list.start_date}}</td>
+                    <td>{{list.end_date}}</td>
+                    <td>{{list.monthly_payment}}</td>
+                    <td>{{list.due_amount}}</td>
+                    <td>{{list.total_amount_to_be_paid}}</td>
+                    <td><button type="button" class="btn btn-primary btn-xs" [routerLink]="['/payloan', list.id]">Pay</button></td>
+                </tr>
+                <!-- <tr >
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>$320,800</td>
+                    <td><button type="button" class="btn btn-primary btn-xs">Pay</button></td>
+                </tr>
+                <tr >
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>$320,800</td>
+                    <td><button type="button" class="btn btn-primary btn-xs">Pay</button></td>
+                </tr>
+                <tr >
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>$320,800</td>
+                    <td><button type="button" class="btn btn-primary btn-xs">Pay</button></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</section>
+  <app-page-footer></app-page-footer>
+</div>

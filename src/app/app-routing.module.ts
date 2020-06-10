@@ -25,6 +25,8 @@ import {PageLandingReceiveComponent} from "./components/page-landing-receive/pag
 import {PageHowItWorksReceiveComponent} from "./components/page-how-it-works-receive/page-how-it-works-receive.component";
 import {PageHowItWorksSendComponent} from "./components/page-how-it-works-send/page-how-it-works-send.component";
 import {PageHowItWorksPaybillsComponent} from "./components/page-how-it-works-paybills/page-how-it-works-paybills.component";
+import { UserLoanComponent } from "./components/user-loan/user-loan.component";
+import { PayLoanComponent } from "./components/pay-loan/pay-loan.component";
 
 const routes: Routes = [
   {
@@ -81,6 +83,14 @@ const routes: Routes = [
   }, {
     path: "coming-soon",
     component: PageComingSoonComponent
+  }, 
+  {
+    path: "userloan",
+    component: UserLoanComponent
+  }, 
+  {
+    path: "payloan/:id",
+    component: PayLoanComponent
   }, 
   // {
   //   path: "",

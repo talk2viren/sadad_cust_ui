@@ -138,7 +138,7 @@ section {
 .nopadd-btm {
   padding-bottom: 0 !important; }
 
-.btn {
+/* .btn {
   color: #fff;
   display: inline-block;
   font-size: 16px;
@@ -148,7 +148,7 @@ section {
   min-width: 200px;
   padding: 20px 25px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden; } */
   @media screen and (min-width: 992px) {
     .btn:first-of-type {
       margin-right: 25px; } }
@@ -2921,6 +2921,14 @@ img.an1.animg5 {
 .box{
   
   margin-right: -60px;
+}
+
+
+thead th, table.dataTable thead td {
+  padding: 8px 18px !important;
+}
+tbody th, table.dataTable tbody td {
+  padding: 3px 10px !important;
 }
 
 /*# sourceMappingURL=style.css.map */
