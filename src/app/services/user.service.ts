@@ -57,6 +57,20 @@ userLoan(FormData){
       );
   }
 
+  loanPaymentHistory(FormData){
+    return this.http.post(this.endpoint + 'payment/loanPaymentHistory',FormData)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+  
+          //Handle the error here
+  
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
+
 handleError(error) {
   let errorMessage = '';
   if (error.error instanceof ErrorEvent) {

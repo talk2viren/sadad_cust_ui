@@ -27,6 +27,7 @@ import {PageHowItWorksSendComponent} from "./components/page-how-it-works-send/p
 import {PageHowItWorksPaybillsComponent} from "./components/page-how-it-works-paybills/page-how-it-works-paybills.component";
 import { UserLoanComponent } from "./components/user-loan/user-loan.component";
 import { PayLoanComponent } from "./components/pay-loan/pay-loan.component";
+import { LoanHistoryComponent } from "./components/loan-history/loan-history.component";
 
 const routes: Routes = [
   {
@@ -91,6 +92,10 @@ const routes: Routes = [
   {
     path: "payloan/:id",
     component: PayLoanComponent
+  }, 
+  {
+    path: "loanhistory",
+    component: LoanHistoryComponent
   }, 
   // {
   //   path: "",
