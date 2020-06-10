@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost/amer_api/Api/',
+  // apiUrl: 'http://localhost/amer_api/Api/',
+  apiUrl: 'http://sadad.thewebsitecart.com/amer_api/Api/',
 };
 
 /*

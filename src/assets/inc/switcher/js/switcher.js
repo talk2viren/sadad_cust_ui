@@ -1,6 +1,7 @@
-jQuery(window).on('load', function () {
+// Commented to remove swither
+// jQuery(window).on('load', function () {
   /* demo */
-
+function myfunction(){
   jQuery('body').append(
     "<div class='switcher'>" +
     "<div class='switcherWrappper'>" +
