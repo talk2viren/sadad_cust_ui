@@ -31,6 +31,7 @@ import { PageHowItWorksPaybillsComponent } from './components/page-how-it-works-
 import { UserService } from './services/user.service';
 import { UserLoanComponent } from './components/user-loan/user-loan.component';
 import { PayLoanComponent } from './components/pay-loan/pay-loan.component';
+import { LoanHistoryComponent } from './components/loan-history/loan-history.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { PayLoanComponent } from './components/pay-loan/pay-loan.component';
     PageHowItWorksSendComponent,
     PageHowItWorksPaybillsComponent,
     UserLoanComponent,
-    PayLoanComponent
+    PayLoanComponent,
+    LoanHistoryComponent
   ],
   imports: [
     BrowserModule,

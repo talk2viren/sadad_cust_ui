@@ -32,7 +32,7 @@ export class PayLoanComponent implements OnInit {
 
   initLoanForm() {
 		this.loanForm = this.fb.group({
-			amout_paid: ['', Validators.compose([
+			amount_paid: ['', Validators.compose([
 				Validators.required,
 			])
 			],
@@ -58,10 +58,11 @@ export class PayLoanComponent implements OnInit {
 		}
 
 		this.loading = true;
-		
+	var customer_id=localStorage.getItem('currentUserId')
     const formData: FormData = new FormData();
-    formData.append("loan_id",  this.id);
-		formData.append("amout_paid", this.loanForm.value.amout_paid);
+        formData.append("loan_id",  this.id);
+		formData.append("amount_paid", this.loanForm.value.amount_paid);
+		formData.append("customer_id", customer_id);
 		formData.append("description", this.loanForm.value.description);
 	
 		
