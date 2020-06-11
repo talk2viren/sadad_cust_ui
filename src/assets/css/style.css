@@ -598,7 +598,10 @@ section {
   width: 100%;
   z-index: 9;
   transition: all .5s;
-  background-color: rgba(0, 0, 0, 0.1); }
+ /* background-color: rgba(0, 0, 0, 0.1); */
+ background-color: #123d88;
+
+}
   .header.fixed-header {
     position: fixed;
     background: #123d88; }
