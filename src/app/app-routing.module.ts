@@ -28,6 +28,7 @@ import {PageHowItWorksPaybillsComponent} from "./components/page-how-it-works-pa
 import { UserLoanComponent } from "./components/user-loan/user-loan.component";
 import { PayLoanComponent } from "./components/pay-loan/pay-loan.component";
 import { LoanHistoryComponent } from "./components/loan-history/loan-history.component";
+import { WepayComponent } from "./components/wepay/wepay.component";
 
 const routes: Routes = [
   {
@@ -97,11 +98,11 @@ const routes: Routes = [
     path: "loanhistory",
     component: LoanHistoryComponent
   }, 
-  // {
-  //   path: "",
-  //   redirectTo: "/home-01",
-  //   pathMatch: "full"
-  // },
+  {
+    path: "wepay",
+    redirectTo: "/wepay",
+    pathMatch: "WepayComponent"
+  },
   {
     path: "",
     redirectTo: "/login",

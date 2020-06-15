@@ -32,6 +32,7 @@ import { UserService } from './services/user.service';
 import { UserLoanComponent } from './components/user-loan/user-loan.component';
 import { PayLoanComponent } from './components/pay-loan/pay-loan.component';
 import { LoanHistoryComponent } from './components/loan-history/loan-history.component';
+import { WepayComponent } from './components/wepay/wepay.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { LoanHistoryComponent } from './components/loan-history/loan-history.com
     PageHowItWorksPaybillsComponent,
     UserLoanComponent,
     PayLoanComponent,
-    LoanHistoryComponent
+    LoanHistoryComponent,
+    WepayComponent
   ],
   imports: [
     BrowserModule,
