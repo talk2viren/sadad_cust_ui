@@ -11,6 +11,7 @@ export class PageHome01Component implements OnInit {
   fullname:any;
   email:any;
   phone:any;
+  loanlist:any;
   constructor(private user:UserService) {}
 
   initialization() {
@@ -163,6 +164,7 @@ export class PageHome01Component implements OnInit {
      // this.userloanlist=res;
      if(res)
      {
+        this.loanlist=res;
         this.totalDue = res[0].total_amount;
         let userId = res[0].customer_id;
         console.log("userId"+userId);

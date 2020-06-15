@@ -114,19 +114,21 @@
       </div>
       <div class="container top-100">
         <div class="card mb-4 shadow">
-            <div class="card-body border-bottom">
+           <div *ngFor="let list of loanlist">
+            <div  class="card-body border-bottom">
                 <div class="row">
                     <div class="col">
-                        <h3 class="mb-0 font-weight-normal">KWD 1548.00</h3>
-                        <p class="text-mute">Rent Balance</p>
+                        <h3 class="mb-0 font-weight-normal">KWD {{list.monthly_payment}}.00</h3>
+                        <p class="text-mute">Monthly EMI</p>
                     </div>
                     <div class="col-auto">
                         <button class="btn btn-default btn-rounded-54 shadow"><i class="material-icons">Pay</i></button>
                     </div>
                 </div>
             </div>
+          </div>
 
-            <div class="card-body border-bottom">
+            <!-- <div class="card-body border-bottom">
               <div class="row">
                   <div class="col">
                       <h3 class="mb-0 font-weight-normal">KWD 1548.00</h3>
@@ -138,8 +140,8 @@
               </div>
           
           
-            </div>
-            <div class="card-body border-bottom">
+            </div> -->
+            <!-- <div class="card-body border-bottom">
               <div class="row">
                   <div class="col">
                       <h3 class="mb-0 font-weight-normal">KWD 1548.00</h3>
@@ -151,7 +153,7 @@
               </div>
           
           
-            </div>
+            </div> -->
             
           </div>
     </div>
