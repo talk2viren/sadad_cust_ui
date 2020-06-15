@@ -1,11 +1,17 @@
 import {Component, OnInit} from "@angular/core";
 import {TimelineMax, Power1, Power2, Power4, Linear} from "gsap/all";
+import { UserService } from "src/app/services/user.service";
+import { HttpHeaders } from "@angular/common/http";
 
 declare let $: any;
 
 @Component({selector: "app-page-home01", templateUrl: "./page-home01.component.html", styleUrls: ["./page-home01.component.scss"]})
 export class PageHome01Component implements OnInit {
-  constructor() {}
+  totalDue:any;
+  fullname:any;
+  email:any;
+  phone:any;
+  constructor(private user:UserService) {}
 
   initialization() {
     //======================
@@ -142,5 +148,40 @@ export class PageHome01Component implements OnInit {
 
   ngOnInit() {
     this.initialization();
+    this.GetuserDetail();
+  }
+
+  public GetuserDetail()
+  {
+    const formData: FormData = new FormData();
+    var customer_id=localStorage.getItem('currentUserId')
+    formData.append("customer_id", customer_id);
+    const httpHeaders = new HttpHeaders();
+    httpHeaders.append('Content-Type','multipart/form-data');
+    this.user.userLoan(formData).subscribe((res:any) => {  
+      //console.log("GetuserDetail : "+JSON.stringify(res[0].total_amount))
+     // this.userloanlist=res;
+     if(res)
+     {
+        this.totalDue = res[0].total_amount;
+        let userId = res[0].customer_id;
+        console.log("userId"+userId);
+        this.user.getUserDetail(userId).subscribe(result =>{
+          console.log("getUserDetail"+JSON.stringify(result));
+          if(result)
+          {
+             this.fullname=result['fullname'];
+             this.email=result['email'];
+             this.phone=result['phone'];
+          }
+        })
+     }
+      
+       
+   },
+   (err)=>{
+    console.log(err)
+   }
+   )  
   }
 }

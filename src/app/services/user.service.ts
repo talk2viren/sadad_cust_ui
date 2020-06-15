@@ -29,6 +29,20 @@ login(FormData){
     );
 }
 
+getUserDetail(id:string){
+  return this.http.get(this.endpoint + 'user/userprofile/'+id)
+    .pipe(
+      catchError((err) => {
+        console.log('error caught in service')
+        console.error(err);
+
+        //Handle the error here
+
+        return throwError(err);    //Rethrow it back to component
+      })
+    );
+}
+
 userLoan(FormData){
     return this.http.post(this.endpoint + 'payment/userLoan',FormData)
       .pipe(
