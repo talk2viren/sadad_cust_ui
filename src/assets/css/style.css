@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500; }
 
 h2 {
-  color: #262934;
+  color: #fff;;
   font-size: 36px; }
 
 img {
@@ -244,7 +244,7 @@ section {
   .mb100 {
     margin-bottom: 100px; } }
 .bg-offwhite {
-  background-color: #f7faff; }
+  background-color: #016acf; }
 
 .sec-heading {
   text-align: center;
@@ -491,7 +491,7 @@ section {
 .list {
   margin-bottom: 30px; }
   .list li {
-    color: #2f2f35;
+    color: #fff;;
     padding-left: 30px;
     position: relative; }
   .list i {
