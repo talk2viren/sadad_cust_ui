@@ -12,6 +12,7 @@ export class PageHome01Component implements OnInit {
   email:any;
   phone:any;
   loanlist:any;
+  amounttopaid:any;
   constructor(private user:UserService) {}
 
   initialization() {
@@ -166,6 +167,7 @@ export class PageHome01Component implements OnInit {
      {
         this.loanlist=res;
         this.totalDue = res[0].total_amount;
+        this.amounttopaid= res[0].total_amount_to_be_paid;
         let userId = res[0].customer_id;
         console.log("userId"+userId);
         this.user.getUserDetail(userId).subscribe(result =>{
