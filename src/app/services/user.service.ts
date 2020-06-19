@@ -84,7 +84,19 @@ userLoan(FormData){
         })
       );
   }
-
+  getUserFlatsByCivilid(id:string){
+    return this.http.get(this.endpoint + 'property/getUserFlatsByCivilId/'+id)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+  
+          //Handle the error here
+  
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
 handleError(error) {
   let errorMessage = '';
   if (error.error instanceof ErrorEvent) {

@@ -13,6 +13,7 @@ export class PageHome01Component implements OnInit {
   phone:any;
   loanlist:any;
   amounttopaid:any;
+  rentList:any;
   constructor(private user:UserService) {}
 
   initialization() {
@@ -177,6 +178,13 @@ export class PageHome01Component implements OnInit {
              this.fullname=result['fullname'];
              this.email=result['email'];
              this.phone=result['phone'];
+          }
+        })
+        this.user.getUserFlatsByCivilid(res[0].civil_id).subscribe(result =>{
+          console.log("getUserFlatsByCivilid"+JSON.stringify(result));
+          if(result)
+          {
+              this.rentList = result;
           }
         })
      }

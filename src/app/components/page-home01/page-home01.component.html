@@ -138,6 +138,19 @@
                 </div>
             </div>
           </div>
+          <div *ngFor="let list of rentList">
+            <div  class="card-body border-bottom">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="mb-0 font-weight-normal">KWD {{list.rent_price}}.00</h3>
+                        <p class="text-mute">Monthly Rent</p>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/payloan', list.rent_id]"><i class="material-icons">Pay</i></button>
+                    </div>
+                </div>
+            </div>
+          </div>
 
             <!-- <div class="card-body border-bottom">
               <div class="row">
