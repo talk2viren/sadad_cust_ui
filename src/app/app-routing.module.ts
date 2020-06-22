@@ -30,6 +30,7 @@ import { PayLoanComponent } from "./components/pay-loan/pay-loan.component";
 import { LoanHistoryComponent } from "./components/loan-history/loan-history.component";
 // import { WepayComponent } from "./components/wepay/wepay.component";
 import { WepayComponent } from './components/wepay/wepay.component';
+import { FlatHistoryComponent } from "./components/flat-history/flat-history.component";
 
 const routes: Routes = [
   {
@@ -96,8 +97,20 @@ const routes: Routes = [
     component: PayLoanComponent
   }, 
   {
+    path: "pay/:id/:type",
+    component: PayLoanComponent
+  }, 
+  {
+    path: "pay/:id/:type",
+    component: PayLoanComponent
+  }, 
+  {
     path: "loanhistory",
     component: LoanHistoryComponent
+  }, 
+  {
+    path: "flathistory",
+    component: FlatHistoryComponent
   }, 
   {
     path: "wepay",

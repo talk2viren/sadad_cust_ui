@@ -84,8 +84,35 @@ userLoan(FormData){
         })
       );
   }
+  flatPaymentHistory(FormData){
+    return this.http.post(this.endpoint + 'payment/flatPaymentHistory',FormData)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+  
+          //Handle the error here
+  
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
   getUserFlatsByCivilid(id:string){
     return this.http.get(this.endpoint + 'property/getUserFlatsByCivilId/'+id)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+  
+          //Handle the error here
+  
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
+
+  paidFlat(FormData){
+    return this.http.post(this.endpoint + 'payment/paidFlat',FormData)
       .pipe(
         catchError((err) => {
           console.log('error caught in service')

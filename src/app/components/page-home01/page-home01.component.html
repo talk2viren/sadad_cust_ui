@@ -95,7 +95,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-auto">
-                <figure class="avatar avatar-60"><img src="../assets/images/user1.png" alt=""></figure>
+                <figure class="avatar avatar-60"><img src="./assets/images/user1.png" alt=""></figure>
               </div>
               <div class="col pl-0 ">
                 <h3 class="mb-0 font-weight-normal">{{fullname}}</h3>
@@ -133,7 +133,7 @@
                         <p class="text-mute">Monthly EMI</p>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/payloan', list.id]"><i class="material-icons">Pay</i></button>
+                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/pay',list.id,'loan']"><i class="material-icons">Pay</i></button>
                     </div>
                 </div>
             </div>
@@ -146,7 +146,7 @@
                         <p class="text-mute">Monthly Rent</p>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/payloan', list.rent_id]"><i class="material-icons">Pay</i></button>
+                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/pay',list.rent_id,'rent']"><i class="material-icons">Pay</i></button>
                     </div>
                 </div>
             </div>
