@@ -106,7 +106,7 @@ export class PageLoginComponent implements OnInit {
 					localStorage.setItem("token",res.token)
                     localStorage.setItem("currentUserId",res.result[0].id)
 					localStorage.setItem("currentUserRole",res.result[0].access)
-				
+				    localStorage.setItem("civil_id",res.result[0].civil_id)
 					this.user.UserRole=localStorage.getItem('currentUserRole')
 					this.user.UserId=localStorage.getItem('currentUserId')
 					console.log(this.user.UserRole);

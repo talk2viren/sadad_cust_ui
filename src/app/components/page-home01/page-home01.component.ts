@@ -180,13 +180,7 @@ export class PageHome01Component implements OnInit {
              this.phone=result['phone'];
           }
         })
-        this.user.getUserFlatsByCivilid(res[0].civil_id).subscribe(result =>{
-          console.log("getUserFlatsByCivilid"+JSON.stringify(result));
-          if(result)
-          {
-              this.rentList = result;
-          }
-        })
+        
      }
       
        
@@ -195,5 +189,13 @@ export class PageHome01Component implements OnInit {
     console.log(err)
    }
    )  
+   var civil_id=localStorage.getItem('civil_id')
+   this.user.getUserFlatsByCivilid(civil_id).subscribe(result =>{
+    console.log("getUserFlatsByCivilid"+JSON.stringify(result));
+    if(result)
+    {
+        this.rentList = result;
+    }
+  })
   }
 }
