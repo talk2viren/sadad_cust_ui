@@ -105,11 +105,7 @@ export class PageSignupComponent implements OnInit {
 		  this.loading = false;
 		  //console.log(res)
 		  const message = `New user has been created successfully.`;
-		  // this.authNoticeService.setNotice(this.translate.instant(message), 'success');
-		   
-		  // this.registerForm.reset();
-		//  this.msg = 'signup created successfully';
-		  //this.router.navigate(['/login']);
+		 
 		  this.showMsg= true;
 		},
 		  (err)=>{
@@ -120,42 +116,7 @@ export class PageSignupComponent implements OnInit {
 			// this.router.navigate(['/auth/register']);
 		}
 	);
-		
-		
-
-		// if (!controls.agree.value) {
-		// 	// you must agree the terms and condition
-		// 	// checkbox cannot work inside mat-form-field https://github.com/angular/material2/issues/7891
-		// 	this.authNoticeService.setNotice('You must agree the terms and condition', 'danger');
-		// 	return;
-		// }
-
-		// const _user: User = new User();
-		// _user.clear();
-		// _user.email = controls.email.value;
-		// _user.username = controls.userName.value;
-		// _user.fullname = controls.fullName.value;
-		// _user.password = controls.password.value;
-		// _user.usertype = controls.userType.value;
-		// _user.roles = [];
-		// this.auth.register(_user).pipe(
-		// 	tap(user => {
-		// 		if (user) {
-		// 			console.log("User Reguser:"+user)
-		// 			//this.store.dispatch(new Register({authToken: user.accessToken}));
-		// 			// pass notice message to the login page
-		// 			this.authNoticeService.setNotice(this.translate.instant('AUTH.REGISTER.SUCCESS'), 'success');
-		// 			this.router.navigateByUrl('/auth/login');
-		// 		} else {
-		// 			this.authNoticeService.setNotice(this.translate.instant('AUTH.VALIDATION.INVALID_LOGIN'), 'danger');
-		// 		}
-		// 	}),
-		// 	takeUntil(this.unsubscribe),
-		// 	finalize(() => {
-		// 		this.loading = false;
-		// 		this.cdr.markForCheck();
-		// 	})
-		// ).subscribe();
+	
 	}
 
 	/**
