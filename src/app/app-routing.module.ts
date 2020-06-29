@@ -7,6 +7,7 @@ import {PageLoginComponent} from "./components/page-login/page-login.component";
 import {PageSignupComponent} from "./components/page-signup/page-signup.component";
 import {PageComingSoonComponent} from "./components/page-coming-soon/page-coming-soon.component";
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
+import { ForgetpwdComponent } from './components/forgetpwd/forgetpwd.component';
 
 // Page Components
 
@@ -30,6 +31,7 @@ import { PayLoanComponent } from "./components/pay-loan/pay-loan.component";
 import { LoanHistoryComponent } from "./components/loan-history/loan-history.component";
 // import { WepayComponent } from "./components/wepay/wepay.component";
 import { WepayComponent } from './components/wepay/wepay.component';
+import { AddcollectorComponent } from './components/addcollector/addcollector.component';
 
 const routes: Routes = [
   {
@@ -107,6 +109,12 @@ const routes: Routes = [
     path: "",
     redirectTo: "/login",
     pathMatch: "full"
+  },{
+    path: "addcollector",
+    component: AddcollectorComponent
+  },{
+    path: "forgetpwd",
+    component: ForgetpwdComponent
   },
    {
     path: "**",

@@ -33,6 +33,9 @@ import { UserLoanComponent } from './components/user-loan/user-loan.component';
 import { PayLoanComponent } from './components/pay-loan/pay-loan.component';
 import { LoanHistoryComponent } from './components/loan-history/loan-history.component';
 import { WepayComponent } from './components/wepay/wepay.component';
+import { AdduserComponent } from './components/adduser/adduser.component';
+import { AddcollectorComponent } from './components/addcollector/addcollector.component';
+import { ForgetpwdComponent } from './components/forgetpwd/forgetpwd.component';
 
 
 @NgModule({
@@ -62,7 +65,10 @@ import { WepayComponent } from './components/wepay/wepay.component';
     UserLoanComponent,
     PayLoanComponent,
     LoanHistoryComponent,
-    WepayComponent
+    WepayComponent,
+    AdduserComponent,
+    AddcollectorComponent,
+    ForgetpwdComponent
   ],
   imports: [
     BrowserModule,

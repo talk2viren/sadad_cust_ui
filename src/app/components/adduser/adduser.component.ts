@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -6,12 +6,13 @@ import { UserService } from "../../../app/services/user.service";
 // RxJS
 import { BehaviorSubject, Observable, of, Subscription } from 'rxjs';
 
-declare let $: any;
 
-@Component({selector: "app-page-signup", templateUrl: "./page-signup.component.html", styleUrls: ["./page-signup.component.scss"]})
-export class PageSignupComponent implements OnInit {
-  constructor(private router: Router,private user:UserService) {}
-
+@Component({
+  selector: 'app-adduser',
+  templateUrl: './adduser.component.html',
+  styleUrls: ['./adduser.component.scss']
+})
+export class AdduserComponent implements OnInit {
 
 	// Private properties
 	private subscriptions: Subscription[] = [];
@@ -19,40 +20,11 @@ export class PageSignupComponent implements OnInit {
   userForm: FormGroup;
   errorMsg: any;
 
-
-  initialization() {
-    //======================
-    // Preloder
-    //======================
-    $(window).on("load", function () {
-      $("#status").fadeOut();
-      $("#preloader").delay(500).fadeOut("slow");
-      $("body").delay(500).css({overflow: "visible"});
-    });
-    $(".sl-slider-caro").owlCarousel({dots: true, items: 1, nav: false, smartSpeed: 500});
-    // ============================
-    // Button Animation
-    // ============================
-    $(".btn").on("mouseenter mousemove", function (e) {
-      var parentOffset = $(this).offset(),
-        relX = e.pageX - parentOffset.left,
-        relY = e.pageY - parentOffset.top;
-      $(this).find(".bh").css({top: relY, left: relX});
-      var origin = relX + "px" + " " + relY + "px";
-    }).on("mouseout", function (e) {
-      var parentOffset = $(this).offset(),
-        relX = e.pageX - parentOffset.left,
-        relY = e.pageY - parentOffset.top;
-      $(this).find(".bh").css({top: relY, left: relX});
-    });
-  }
+  constructor(private router: Router,private user:UserService) { }
 
   ngOnInit() {
-    this.initialization();
   }
-
-
-  	/**
+	/**
 	 * Add User
 	 *
 	 * @param _user: User
