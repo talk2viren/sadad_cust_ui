@@ -1,3 +1,57 @@
-<p>
-  forgetpwd works!
-</p>
+<div class="login-page">
+  <div class="signup-login">
+    <div class="sl-slider-caro owl-carousel">
+      <div class="single-sl-slide">
+        <img src="assets/images/forget-pwd.png" alt="">
+        <div class="content-box">
+          <h2>All In One Payment Transfer Solution</h2>
+          <p>Pay your home rent from from any time anywhere.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sl-form-wrap">
+      <!-- <header> -->
+        <div>
+        <a routerLink='/' class="logo">
+          <img src="assets/images/logo-2.png" alt="">
+        </a>
+      </div>
+        <!-- <a href="javascript:void(0)" class="mbl-menu-toggler">
+          <i class="fas fa-align-left"></i>
+        </a> -->
+      <!-- </header> -->
+      <div class="content-box">
+        <h2>Login Account</h2>
+      </div>
+      <!-- <div [hidden]="!message" class="alert alert-danger">
+        <div class="alert-text" [innerHTML]="message"></div>
+      </div> -->
+      <div [hidden]="!message" class="alert alert-danger">
+        <div class="alert-text">{{message}}</div>
+      </div>
+      <form  class="sl-form" [formGroup]="loginForm" autocomplete="off" >
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Please Enter Email" formControlName="email" required>
+          <div *ngIf="isControlHasError('email','required')" class="alert alert-danger">Email is Required</div>
+          <div *ngIf="isControlHasError('email','email')" class="alert alert-danger">Invalid Email</div>
+          
+        </div>
+        <div class="form-group">
+          <label>Mobile</label>
+          <input type="text" placeholder="+965 123 XXXXX"  required>
+          <div *ngIf="isControlHasError('password','required')" class="alert alert-danger">Password is Required</div>
+        </div>
+        <!-- <div class="form-group">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="remember">
+            <label class="custom-control-label" for="remember">Remember Password</label>
+          </div>
+        </div> -->
+        <button class="btn btn-filled btn-round" (click)="submit()"><span class="bh"></span> <span>Recover Password</span></button>
+        <p class="notice">Don’t have an account? <a routerLink="/signup">Signup Now</a></p>
+        <p class="notice">Go to Sign In? <a routerLink="/login">Forget Password</a></p>
+      </form>
+    </div>
+  </div>
+</div>
