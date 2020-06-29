@@ -86,10 +86,65 @@ export class UserService {
         })
       );
   }
+  flatPaymentHistory(FormData){
+    return this.http.post(this.endpoint + 'payment/flatPaymentHistory',FormData)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+  
+          //Handle the error here
+  
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
+  getUserFlatsByCivilid(id:string){
+    return this.http.get(this.endpoint + 'property/getUserFlatsByCivilId/'+id)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+  
+          //Handle the error here
+  
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
 
-  handleError(error) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
+  // handleError(error) {
+  //   let errorMessage = '';
+  //   if (error.error instanceof ErrorEvent) {
+  paidFlat(FormData){
+    return this.http.post(this.endpoint + 'payment/paidFlat',FormData)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+  
+          //Handle the error here
+  
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
+  createUser(FormData){
+    return this.http.post(this.endpoint + 'user/createUser',FormData)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+  
+          //Handle the error here
+  
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
+handleError(error) {
+  let errorMessage = '';
+  if (error.error instanceof ErrorEvent) {
       // client-side error
       errorMessage = `Error: ${error.error.message}`;
     } else {
@@ -100,12 +155,12 @@ export class UserService {
     return throwError(errorMessage);
   }
 
-  createUser(formData) {
-    return this.http.post(this.endpoint+'user/createUser',formData)
-      .pipe(
-        retry(1),
-        catchError(this.handleError)
-      );
-  }
+  // createUser(formData) {
+  //   return this.http.post(this.endpoint+'user/createUser',formData)
+  //     .pipe(
+  //       retry(1),
+  //       catchError(this.handleError)
+  //     );
+  // }
 
 }

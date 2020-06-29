@@ -95,17 +95,28 @@
           <div class="card-body">
             <div class="row">
               <div class="col-auto">
-                <figure class="avatar avatar-60"><img src="../assets/images/user1.png" alt=""></figure>
+                <figure class="avatar avatar-60"><img src="./assets/images/user1.png" alt=""></figure>
               </div>
-              <div class="col pl-0 align-self-center">
-                <h5 class="mb-1">{{fullname}}</h5>
+              <div class="col pl-0 ">
+                <h3 class="mb-0 font-weight-normal">{{fullname}}</h3>
                 <p class="text-mute small">{{email}}</p>
                 <p class="text-mute small">{{phone}}</p>
             </div>
             <div class="col">
+              <div class="row" style="height: 50%;">
+                <div class="col">
               <h3 class="mb-0 font-weight-normal">KWD {{totalDue}}.00</h3>
               <p class="text-mute">Total Due</p>
+                </div>
+            </div>
+             <div class="row" style="height: 50%;">
+                <div class="col">
+              <h4 class="mb-0 font-weight-normal">KWD {{amounttopaid}}</h4>
+              <p class="text-mute small">Monthly amount to pay</p>
+                </div>
+            </div>
           </div>
+          
 <i class="fa fa-pencil fa-fw"></i>
 
         </div>
@@ -122,7 +133,20 @@
                         <p class="text-mute">Monthly EMI</p>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-default btn-rounded-54 shadow"><i class="material-icons">Pay</i></button>
+                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/pay',list.id,'loan']"><i class="material-icons">Pay</i></button>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div *ngFor="let list of rentList">
+            <div  class="card-body border-bottom">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="mb-0 font-weight-normal">KWD {{list.rent_price}}.00</h3>
+                        <p class="text-mute">Monthly Rent</p>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/pay',list.rent_id,'rent']"><i class="material-icons">Pay</i></button>
                     </div>
                 </div>
             </div>

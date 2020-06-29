@@ -16,7 +16,7 @@ export class PayLoanComponent implements OnInit {
  loading = false;
  message:any;
  id:any;
- 
+ type:any;
  constructor( private fb: FormBuilder,
               private router: Router,
               private route:ActivatedRoute,
@@ -25,7 +25,9 @@ export class PayLoanComponent implements OnInit {
   ngOnInit() {
     this.initLoanForm();
     this.route.params.subscribe(params=>{
-      this.id= params['id'];
+		console.log("Params : "+JSON.stringify(params));
+	  this.id= params['id'];
+	  this.type = params['type'];
      
     })
   }
@@ -58,26 +60,56 @@ export class PayLoanComponent implements OnInit {
 		}
 
 		this.loading = true;
-	var customer_id=localStorage.getItem('currentUserId')
-    const formData: FormData = new FormData();
-        formData.append("loan_id",  this.id);
-		formData.append("amount_paid", this.loanForm.value.amount_paid);
-		formData.append("customer_id", customer_id);
-		formData.append("description", this.loanForm.value.description);
-	
+		if(this.type == 'loan')
+		{
+			var customer_id=localStorage.getItem('currentUserId')
+			const formData: FormData = new FormData();
+			formData.append("loan_id",  this.id);
+			formData.append("amount_paid", this.loanForm.value.amount_paid);
+			formData.append("customer_id", customer_id);
+			formData.append("description", this.loanForm.value.description);
 		
-		const httpHeaders = new HttpHeaders();
-		httpHeaders.append('Content-Type','multipart/form-data');
+			
+			const httpHeaders = new HttpHeaders();
+			httpHeaders.append('Content-Type','multipart/form-data');
+			
+			this.user.payLoan(formData).subscribe((res: any)=>{
+				console.log(res)
+			this.router.navigate(['/loanhistory']);
+				
+				}, (err)=>{
+					console.log(err)
+				
+				}
+			)
+		}
+		else if( this.type== "rent")
+		{
+			var customer_id=localStorage.getItem('currentUserId')
+			const formData: FormData = new FormData();
+			formData.append("usersflat_id",  this.id);
+			formData.append("amount_paid", this.loanForm.value.amount_paid);
+			formData.append("customer_id", customer_id);
+			formData.append("description", this.loanForm.value.description);
 		
-		this.user.payLoan(formData).subscribe((res: any)=>{
-			console.log(res)
-        this.router.navigate(['/userloan']);
 			
-			}, (err)=>{
-				console.log(err)
+			const httpHeaders = new HttpHeaders();
+			httpHeaders.append('Content-Type','multipart/form-data');
 			
-			}
-		)
+			this.user.paidFlat(formData).subscribe((res: any)=>{
+				console.log(res)
+			this.router.navigate(['/flathistory']);
+				
+				}, (err)=>{
+					console.log(err)
+				
+				}
+			)
+			//console.log("Pay rent");
+		}
+		else{
+			console.log("Mode not found");
+		}
 	
 	}
 

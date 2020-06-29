@@ -36,6 +36,7 @@ import { WepayComponent } from './components/wepay/wepay.component';
 import { AdduserComponent } from './components/adduser/adduser.component';
 import { AddcollectorComponent } from './components/addcollector/addcollector.component';
 import { ForgetpwdComponent } from './components/forgetpwd/forgetpwd.component';
+import { FlatHistoryComponent } from './components/flat-history/flat-history.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { ForgetpwdComponent } from './components/forgetpwd/forgetpwd.component';
     WepayComponent,
     AdduserComponent,
     AddcollectorComponent,
-    ForgetpwdComponent
+    ForgetpwdComponent,
+    FlatHistoryComponent
   ],
   imports: [
     BrowserModule,

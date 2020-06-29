@@ -12,6 +12,8 @@ export class PageHome01Component implements OnInit {
   email:any;
   phone:any;
   loanlist:any;
+  amounttopaid:any;
+  rentList:any;
   constructor(private user:UserService) {}
 
   initialization() {
@@ -166,7 +168,27 @@ export class PageHome01Component implements OnInit {
      {
         this.loanlist=res;
         this.totalDue = res[0].total_amount;
-        let userId = res[0].customer_id;
+        this.amounttopaid = 0;
+        if(this.totalDue > 0) 
+        {
+          let monthly_payment = parseInt(res[0].monthly_payment);
+          if(parseInt(res[0].due_amount) != NaN && res[0].total_amount  > monthly_payment)
+          {
+            if(res[0].due_amount ==null)
+            {
+              this.amounttopaid= monthly_payment;
+            }
+            else{
+              this.amounttopaid= monthly_payment+parseInt(res[0].due_amount);
+            }
+          } 
+          else
+          { 
+            this.amounttopaid= res[0].total_amount; 
+          }
+        }
+      
+        let userId = res[0].customer_id; 
         console.log("userId"+userId);
         this.user.getUserDetail(userId).subscribe(result =>{
           console.log("getUserDetail"+JSON.stringify(result));
@@ -177,6 +199,7 @@ export class PageHome01Component implements OnInit {
              this.phone=result['phone'];
           }
         })
+        
      }
       
        
@@ -185,5 +208,13 @@ export class PageHome01Component implements OnInit {
     console.log(err)
    }
    )  
+   var civil_id=localStorage.getItem('civil_id')
+   this.user.getUserFlatsByCivilid(civil_id).subscribe(result =>{
+    console.log("getUserFlatsByCivilid"+JSON.stringify(result));
+    if(result)
+    {
+        this.rentList = result;
+    }
+  })
   }
 }
