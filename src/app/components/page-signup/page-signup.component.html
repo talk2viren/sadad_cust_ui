@@ -38,27 +38,40 @@
         <h2>Create Account</h2>
         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sedo<br> eiusmod tempor incididunt dolore.</p> -->
       </div>
-      <form action="#" class="sl-form">
+      <form class="sl-form" [formGroup]="signupForm" >
+
+        <div class="form-group"  *ngIf="showMsg">
+          
+          <p class="alert alert-success">
+              <strong>Registration Successfully...</strong> <a routerLink="/login">please click to Login</a>.
+
+          </p>
+        
+      </div>
+
         <div class="form-group">
           <label>Full Name</label>
-          <input type="text" placeholder="Jhone Doe" required>
+          <input type="text" placeholder="Jhone Doe" required formControlName="fullName">
+		  <div *ngIf="isControlHasError('fullName','required')" class="alert alert-danger">Fullname is Required</div>
         </div>
         <div class="form-group">
           <label>Phone No.</label>
-          <input type="email" placeholder="+965 123 45678" required>
+          <input type="text" placeholder="+965 123 45678" required formControlName="phone">
         </div>
         <div class="form-group">
           <label>Civil ID</label>
-          <input type="email" placeholder="CIVILID" required>
+          <input type="text" placeholder="CIVILID" required formControlName="civilId">
+		  <div *ngIf="isControlHasError('civilId','required')" class="alert alert-danger">Civil ID is Required</div>
         </div>
 
         <div class="form-group">
-          <label>Email or Username</label>
-          <input type="email" placeholder="firstname.lastname@gmail.com" required>
+          <label>Email</label>
+          <input type="email" placeholder="firstname.lastname@gmail.com" required formControlName="email">
+		  <div *ngIf="isControlHasError('email','required')" class="alert alert-danger">Email is Required</div>
         </div>
         <div class="form-group">
           <label>Password</label>
-          <input type="password" placeholder="Password" required>
+          <input type="password" placeholder="Password" required formControlName="password">
         </div>
         <div class="form-group">
           <div class="custom-control custom-checkbox">
@@ -67,7 +80,7 @@
                 Conditions</a></label>
           </div>
         </div>
-        <button class="btn btn-filled btn-round"><span class="bh"></span> <span>Signup</span></button>
+        <button class="btn btn-filled btn-round" (click)="submit()"><span class="bh"></span> <span>Signup</span></button>
         <p class="notice">Register as collector ? <a routerLink="/addcollector">Collector Signup</a></p>
         <p class="notice">Already have an account? <a routerLink="/login">Login Account</a></p>
       </form>

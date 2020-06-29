@@ -1,24 +1,23 @@
 import {Component, OnInit} from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from "../../../app/services/user.service";
-// RxJS
-import { BehaviorSubject, Observable, of, Subscription } from 'rxjs';
+import { FormGroup, Validators, FormBuilder } from "@angular/forms";
+import { HttpHeaders } from "@angular/common/http";
+import { UserService } from "src/app/services/user.service";
+import { Router } from "@angular/router";
 
 declare let $: any;
 
 @Component({selector: "app-page-signup", templateUrl: "./page-signup.component.html", styleUrls: ["./page-signup.component.scss"]})
 export class PageSignupComponent implements OnInit {
-  constructor(private router: Router,private user:UserService) {}
 
-
-	// Private properties
-	private subscriptions: Subscription[] = [];
-
-  userForm: FormGroup;
-  errorMsg: any;
-
+  signupForm:FormGroup;
+  loading:false;
+  msg: string = null;
+  showMsg: boolean = false;
+  constructor(
+    private user:UserService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   initialization() {
     //======================
@@ -49,64 +48,129 @@ export class PageSignupComponent implements OnInit {
 
   ngOnInit() {
     this.initialization();
+    this.initSignForm();
+  }
+  initSignForm() {
+		this.signupForm = this.fb.group({
+			email: ['', Validators.compose([
+				Validators.required,
+				Validators.email,
+			])
+			],
+			password: ['', Validators.compose([
+				Validators.required,
+			])
+      ],
+      fullName: ['', Validators.compose([
+				Validators.required,	
+			])
+      ],
+      phone: ['', Validators.compose([
+				Validators.required,	
+			])
+      ],
+      civilId: ['', Validators.compose([
+				Validators.required,	
+			])
+			],
+		});
   }
 
+  submit() {
+		const controls = this.signupForm.controls;
 
-  	/**
-	 * Add User
+		// check form
+		if (this.signupForm.invalid) {
+			Object.keys(controls).forEach(controlName =>
+				controls[controlName].markAsTouched()
+			);
+			return;
+		}
+
+	//	this.loading = true;
+		const formData: FormData = new FormData();
+	
+		formData.append("fullName", this.signupForm.value.fullName);
+		formData.append("email", this.signupForm.value.email);
+		formData.append("civilId",this.signupForm.value.civilId);
+		formData.append("phone",this.signupForm.value.phone);
+    formData.append("password", this.signupForm.value.password);
+    formData.append("userType","User");
+		// formData.append("userType", this.signupForm.value.userType);
+	
+        const httpHeaders = new HttpHeaders();
+        httpHeaders.append('Content-Type','multipart/form-data');
+        this.user.createUser(formData)
+        .subscribe(res=>{
+		  this.loading = false;
+		  //console.log(res)
+		  const message = `New user has been created successfully.`;
+		  // this.authNoticeService.setNotice(this.translate.instant(message), 'success');
+		   
+		  // this.registerForm.reset();
+		//  this.msg = 'signup created successfully';
+		  //this.router.navigate(['/login']);
+		  this.showMsg= true;
+		},
+		  (err)=>{
+			// this.loading = true;
+			// const message = `Unable to Create User.`;
+			// this.authNoticeService.setNotice(this.translate.instant(message), 'danger');
+			// this.loading = false;
+			// this.router.navigate(['/auth/register']);
+		}
+	);
+		
+		
+
+		// if (!controls.agree.value) {
+		// 	// you must agree the terms and condition
+		// 	// checkbox cannot work inside mat-form-field https://github.com/angular/material2/issues/7891
+		// 	this.authNoticeService.setNotice('You must agree the terms and condition', 'danger');
+		// 	return;
+		// }
+
+		// const _user: User = new User();
+		// _user.clear();
+		// _user.email = controls.email.value;
+		// _user.username = controls.userName.value;
+		// _user.fullname = controls.fullName.value;
+		// _user.password = controls.password.value;
+		// _user.usertype = controls.userType.value;
+		// _user.roles = [];
+		// this.auth.register(_user).pipe(
+		// 	tap(user => {
+		// 		if (user) {
+		// 			console.log("User Reguser:"+user)
+		// 			//this.store.dispatch(new Register({authToken: user.accessToken}));
+		// 			// pass notice message to the login page
+		// 			this.authNoticeService.setNotice(this.translate.instant('AUTH.REGISTER.SUCCESS'), 'success');
+		// 			this.router.navigateByUrl('/auth/login');
+		// 		} else {
+		// 			this.authNoticeService.setNotice(this.translate.instant('AUTH.VALIDATION.INVALID_LOGIN'), 'danger');
+		// 		}
+		// 	}),
+		// 	takeUntil(this.unsubscribe),
+		// 	finalize(() => {
+		// 		this.loading = false;
+		// 		this.cdr.markForCheck();
+		// 	})
+		// ).subscribe();
+	}
+
+	/**
+	 * Checking control validation
 	 *
-	 * @param _user: User
-	 * @param withBack: boolean
+	 * @param controlName: string => Equals to formControlName
+	 * @param validationType: string => Equals to valitors name
 	 */
-  addUser(withBack: boolean = true) {
+	isControlHasError(controlName: string, validationType: string): boolean {
+		const control = this.signupForm.controls[controlName];
+		if (!control) {
+			return false;
+		}
 
-    const formData: FormData = new FormData();
-
-    formData.append("fullName", this.userForm.value.fullName);
-    formData.append("email", this.userForm.value.email);
-    formData.append("userName", this.userForm.value.userName);
-    formData.append("phone", this.userForm.value.phone);
-    formData.append("password", this.userForm.value.password);
-    formData.append("userType", this.userForm.value.userType);
-
-    const httpHeaders = new HttpHeaders();
-    httpHeaders.append('Content-Type', 'multipart/form-data');
-    this.user.createUser(formData)
-      .subscribe(res => {
-        console.log(res)
-        if (this.userForm.value.userType == 'Admin') {
-          const message = `New user successfully has been added.`;
-          //this.layoutUtilsService.showActionNotification(message, MessageType.Create, 5000, true, true);
-          this.router.navigate(['/adminlist']);
-          this.userForm.reset();
-        } else {
-          this.router.navigate(['/collectorlist']);
-          this.userForm.reset();
-        }
-
-
-        error => {
-          this.errorMsg = error
-          console.log(error)
-        }
-
-      });
-// viren
-    // const addSubscription = this.store.pipe(select(selectLastCreatedUserId)).subscribe(newId => {
-      // const message = `New user successfully has been added.`;
-      // this.layoutUtilsService.showActionNotification(message, MessageType.Create, 5000, true, true);
-      // this.router.navigate(['/user-management/admins']);
-      // this.userForm.reset();
-      // if (newId) {
-      // 	if (withBack) {
-      // 		this.goBackWithId();
-      // 	} else {
-      // 		this.refreshUser(true, newId);
-      // 	}
-      // }
-    // });
-// viren
-    // this.subscriptions.push(addSubscription);
-  }
-
+		const result = control.hasError(validationType) && (control.dirty || control.touched);
+		return result;
+	}
 }
