@@ -28,6 +28,8 @@ export class LoanHistoryComponent implements OnInit {
     this.user.loanPaymentHistory(formData).subscribe((res:any) => {  
       console.log(res)
       this.userloanhistorylist=res;
+      
+
     },
       (err)=>{
       console.log(err)

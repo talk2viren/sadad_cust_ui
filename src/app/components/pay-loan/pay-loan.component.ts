@@ -75,7 +75,10 @@ export class PayLoanComponent implements OnInit {
 			
 			this.user.payLoan(formData).subscribe((res: any)=>{
 				console.log(res)
-			this.router.navigate(['/loanhistory']);
+				
+					this.router.navigate(['/loanhistory']);
+			
+			
 				
 				}, (err)=>{
 					console.log(err)

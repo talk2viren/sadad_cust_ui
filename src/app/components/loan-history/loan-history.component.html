@@ -29,7 +29,11 @@
                     <th>Monthly Payment</th>
                     <th>Amount Paid</th>
                     <th>Due Amount</th>
+                    <th>Monthly Due Amount</th>
                     <th>Paid Date</th>
+                  
+                    <!-- <th>Total Amount Paid</th>
+                    <th>Total due Paid</th> -->
                     <!-- <th>Remaining Amount</th> -->
                 </tr>
             </thead>
@@ -39,12 +43,27 @@
                     <td>{{list.monthly_payment}}</td>
                     <td>{{list.amount_paid}}</td>
                     <td>{{list.due_amount}}</td>
+                    <td>{{list.total_dueamount}}</td>
                     <td>{{list.updatedAt}}</td>
-                    <!-- <td>{{list.remaining_amount}}</td> -->
+                    <!-- <td>{{list.total_amount_paid}}</td> 
+                    <td>{{list.t_due_amount}}</td>  -->
                   </tr>
+                
+                  <tr>
+                      <td></td>
+                      <td></td>
+                      <td *ngIf="userloanhistorylist[0]">Total Amount Paid: {{userloanhistorylist[0].total_amount_paid}}</td>
+                      <td *ngIf="userloanhistorylist[0]">Total Amount to be Paid: {{userloanhistorylist[0].t_due_amount}}</td>
+                      <td></td>
+                      <td></td>
+                      
+                    </tr>
+                 
               
             </tbody>
         </table>
+        
+        
     </div>
 </section>
 
