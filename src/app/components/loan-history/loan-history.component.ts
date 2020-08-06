@@ -27,7 +27,7 @@ export class LoanHistoryComponent implements OnInit {
     httpHeaders.append('Content-Type','multipart/form-data');
     this.user.loanPaymentHistory(formData).subscribe((res:any) => {  
       console.log(res)
-      this.userloanhistorylist=res;
+      this.userloanhistorylist=res.result;
       
 
     },
