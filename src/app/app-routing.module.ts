@@ -33,6 +33,7 @@ import { LoanHistoryComponent } from "./components/loan-history/loan-history.com
 import { WepayComponent } from './components/wepay/wepay.component';
 import { AddcollectorComponent } from './components/addcollector/addcollector.component';
 import { FlatHistoryComponent } from "./components/flat-history/flat-history.component";
+import { PaymentComponent } from "./components/payment/payment.component";
 
 const routes: Routes = [
   {
@@ -117,6 +118,10 @@ const routes: Routes = [
   {
     path: "wepay",
     component: WepayComponent
+  },
+  {
+    path: "payment",
+    component: PaymentComponent
   },
   {
     path: "",

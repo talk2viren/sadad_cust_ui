@@ -20,7 +20,31 @@
     </div>
   </section> -->
   <!-- Banner section end -->
+  <!-- <section>
+    Select Product :  
+    <select [(ngModel)]="ProductHeader.name" (ngModelChange)="SearchProduct(ProductHeader.name)">  
+      <option *ngFor="let prod of ProductHeader">{{prod.name}} </option>  
+  </select>  -->
   <section>
+    Select Product :  
+    <select [(ngModel)]="ProductHeader.name" (ngModelChange)="SearchProduct(ProductHeader.name)">  
+      <option *ngFor="let list of userloanhistorylist">{{list.loan_type}} </option>  
+  </select> 
+   
+  
+  <table class="TFtable">  
+    <tr >  
+    <th>Name</th> <th>Store</th> <th>Price</th> <th>Model</th>  
+    </tr>  
+    <tr *ngFor="let Prod of ProductDetails">  
+    <td>{{Prod.title}}</td>  
+    <td>{{Prod.store}}</td>  
+    <td>{{Prod.price}}</td>  
+    <td>{{Prod.model}}</td>  
+    </tr>  
+      
+    </table>  
+
     <div class="container" style=" width: 80%;font-size:12px;">
         <table id="example" class="table table-striped table-bordered" style="width:100%;">
             <thead>
