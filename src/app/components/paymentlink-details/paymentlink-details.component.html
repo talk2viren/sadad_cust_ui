@@ -72,9 +72,10 @@
                     <td>{{userpaymentlist.phone}}</td>
                     <td>{{userpaymentlist.civil_id}}</td>
                     <td>{{userpaymentlist.price}}</td>
+                    <td>{{userpaymentlist.comment}}</td>
                     <td *ngIf="userpaymentlist.amount_paid">{{userpaymentlist.amount_paid}}</td>
                     <td *ngIf="userpaymentlist.descrpition">{{userpaymentlist.descrpition}}</td>
-                    <td>{{userpaymentlist.comment}}</td>
+                   
                     <td><div class="col-auto">
                       <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/payment',userpaymentlist.id]" *ngIf="userpaymentlist.status==''"><i class="material-icons">Pay</i></button>
                       <button class="btn btn-default btn-rounded-54 shadow" *ngIf="userpaymentlist.status=='paid'" ><i class="material-icons">{{userpaymentlist.status}}</i></button>
