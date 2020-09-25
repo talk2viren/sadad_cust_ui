@@ -1,0 +1,168 @@
+<div class="home-one">
+  <app-page-header></app-page-header>
+   <!-- Banner section start -->
+   <!-- <section class="banner v1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 m-auto">
+          <div class="ban-content text-center">
+            <h1>Transfer Money Across World in Real Time <br>With No Charge</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore <br> magna aliqua. Quis ipsum suspe ultrices gravida. Risus commodo viverra maecenas .</p> -->
+            <!-- <a routerLink="/landing-page-send" class="btn btn-default"><span class="bh"></span> <span>Send Money</span>
+            </a>
+            <a routerLink="/landing-page-receive" class="btn btn-outline btn-round"><span class="bh"></span>
+              <span>Receive
+                Money</span></a> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- Banner section end -->
+  <!-- <section>
+    Select Product :  
+    <select [(ngModel)]="ProductHeader.name" (ngModelChange)="SearchProduct(ProductHeader.name)">  
+      <option *ngFor="let prod of ProductHeader">{{prod.name}} </option>  
+  </select>  -->
+  <section>
+    <!-- Select Product :  
+    <select [(ngModel)]="ProductHeader.name" (ngModelChange)="SearchProduct(ProductHeader.name)">  
+      <option *ngFor="let list of userloanhistorylist">{{list.loan_type}} </option>  
+  </select>  -->
+   
+  
+  <!-- <table class="TFtable">  
+    <tr >  
+    <th>Name</th> <th>Store</th> <th>Price</th> <th>Model</th>  
+    </tr>  
+    <tr *ngFor="let Prod of ProductDetails">  
+    <td>{{Prod.title}}</td>  
+    <td>{{Prod.store}}</td>  
+    <td>{{Prod.price}}</td>  
+    <td>{{Prod.model}}</td>  
+    </tr>  
+      
+    </table>   -->
+
+    <div class="container" style=" width: 80%;font-size:12px;">
+        <table id="example" class="table table-striped table-bordered" style="width:100%;">
+            <thead>
+                <tr>
+                   <th>Fullname</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>civil_id</th>
+                    <th>Price</th>
+                    <th>Comment</th>
+                    <th *ngIf="userpaymentlist.amount_paid">Amount Paid</th>
+                    <th *ngIf="userpaymentlist.descrpition">Description</th>
+                    <th>Status</th>
+                  
+                    <!-- <th>Total Amount Paid</th>
+                    <th>Total due Paid</th> -->
+                    <!-- <th>Remaining Amount</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr *ngFor="let list of userpaymentlist"> -->
+                  <tr>
+                    <td>{{userpaymentlist.fullname}}</td>
+                    <td>{{userpaymentlist.email}}</td>
+                    <td>{{userpaymentlist.phone}}</td>
+                    <td>{{userpaymentlist.civil_id}}</td>
+                    <td>{{userpaymentlist.price}}</td>
+                    <td *ngIf="userpaymentlist.amount_paid">{{userpaymentlist.amount_paid}}</td>
+                    <td *ngIf="userpaymentlist.descrpition">{{userpaymentlist.descrpition}}</td>
+                    <td>{{userpaymentlist.comment}}</td>
+                    <td><div class="col-auto">
+                      <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/payment',userpaymentlist.id]" *ngIf="userpaymentlist.status==''"><i class="material-icons">Pay</i></button>
+                      <button class="btn btn-default btn-rounded-54 shadow" *ngIf="userpaymentlist.status=='paid'" ><i class="material-icons">{{userpaymentlist.status}}</i></button>
+                  </div></td>
+                    
+                  </tr>
+                
+                  
+                 
+              
+            </tbody>
+        </table>
+        
+        
+    </div>
+</section>
+
+  <!-- Payment service section start -->
+  <section class="payment-service bg-offwhite">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="content-box">
+            <h2>Why To User Our Platform</h2>
+            <ul class="list">
+              <li><i class="fas fa-check-circle"></i> One stop solution for all bill payment needes. </li>
+              <li><i class="fas fa-check-circle"></i> Pay your house rent any time from anywhere.</li>
+              <li><i class="fas fa-check-circle"></i> Get instant loan and pay easy EMI using our mobile apps.</li>
+              <li><i class="fas fa-check-circle"></i> Accessable anywhere and any time using our mobile app on android and iOS.</li>
+              <li><i class="fas fa-check-circle"></i> Fast and secure money transfer.</li>
+            </ul>
+            <!-- <a href="javascript:void(0)" class="btn btn-default"><span class="bh"></span> <span>try it now</span></a> -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <figure class="imgBox">
+            <img src="assets/images/payment-service.png" alt="">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Payment service section end -->
+
+   <!-- Testimonial section start -->
+   <section class="testimonial-v2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 m-auto">
+          <div class="sec-heading">
+            <h2 class="sec-title">What Our Users Say About Us</h2>
+            <p class="sec-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-10 col-md-12 m-auto">
+          <div class="testimonialBox">
+            <span class="quote-sign"><i class="fas fa-quote-left"></i></span>
+            <div class="test-caro-2 owl-carousel" data-slider-id="1">
+              <div class="single-testimonial">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                  eco
+                  dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis.</p>
+              </div>
+              <div class="single-testimonial">
+                <p>Ypsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore eco
+                  dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis.</p>
+              </div>
+              <div class="single-testimonial">
+                <p>Qonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore eco dolore magna aliqua. Quis
+                  ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+              </div>
+            </div>
+            <div class="client-thumb owl-thumbs" data-slider-id="1">
+              <a href="javascript:void(0)" class="owl-thumb-item"><img src="assets/images/avatar.png" alt=""></a>
+              <a href="javascript:void(0)" class="owl-thumb-item"><img src="assets/images/avatar.png" alt=""></a>
+              <a href="javascript:void(0)" class="owl-thumb-item"><img src="assets/images/avatar.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonial section end -->
+
+  <app-page-footer></app-page-footer>
+</div>

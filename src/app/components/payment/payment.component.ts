@@ -12,7 +12,7 @@ import { UserService } from "../../../app/services/user.service";
 export class PaymentComponent implements OnInit {
 
  // Public params
- loanForm: FormGroup;
+ paymentForm: FormGroup;
  loading = false;
  message:any;
  id:any;
@@ -27,18 +27,18 @@ export class PaymentComponent implements OnInit {
     this.route.params.subscribe(params=>{
 		console.log("Params : "+JSON.stringify(params));
 	  this.id= params['id'];
-	  this.type = params['type'];
+	  //this.type = params['type'];
      
     })
   }
 
   initLoanForm() {
-		this.loanForm = this.fb.group({
+		this.paymentForm = this.fb.group({
 			amount_paid: ['', Validators.compose([
 				Validators.required,
 			])
 			],
-			description: ['', Validators.compose([
+			descrpition: ['', Validators.compose([
 				Validators.required,
 		  ])
 			]
@@ -50,9 +50,9 @@ export class PaymentComponent implements OnInit {
 	 */
 	submit() {
    
-		const controls = this.loanForm.controls;
+		const controls = this.paymentForm.controls;
 		/** check form */
-		if (this.loanForm.invalid) {
+		if (this.paymentForm.invalid) {
 			Object.keys(controls).forEach(controlName =>
 				controls[controlName].markAsTouched()
 			);
@@ -64,10 +64,10 @@ export class PaymentComponent implements OnInit {
 		// {
 			var customer_id=localStorage.getItem('currentUserId')
 			const formData: FormData = new FormData();
-			// formData.append("loan_id",  this.id);
-			formData.append("amount_paid", this.loanForm.value.amount_paid);
+			formData.append("user_id", this.id);
+			formData.append("amount_paid", this.paymentForm.value.amount_paid);
 			// formData.append("customer_id", customer_id);
-			formData.append("description", this.loanForm.value.description);
+			formData.append("descrpition", this.paymentForm.value.descrpition);
 		
 			
 			const httpHeaders = new HttpHeaders();
@@ -76,7 +76,7 @@ export class PaymentComponent implements OnInit {
 			this.user.pay(formData).subscribe((res: any)=>{
 				console.log(res)
 				
-					this.router.navigate(['/loanhistory']);
+					this.router.navigate(['/paymentlinkdetails']);
 			
 			
 				
@@ -117,7 +117,7 @@ export class PaymentComponent implements OnInit {
 	}
 
 	isControlHasError(controlName: string, validationType: string): boolean {
-		const control = this.loanForm.controls[controlName];
+		const control = this.paymentForm.controls[controlName];
 		if (!control) {
 			return false;
 		}

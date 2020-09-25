@@ -34,6 +34,7 @@ import { WepayComponent } from './components/wepay/wepay.component';
 import { AddcollectorComponent } from './components/addcollector/addcollector.component';
 import { FlatHistoryComponent } from "./components/flat-history/flat-history.component";
 import { PaymentComponent } from "./components/payment/payment.component";
+import { PaymentlinkDetailsComponent } from "./components/paymentlink-details/paymentlink-details.component";
 
 const routes: Routes = [
   {
@@ -120,8 +121,12 @@ const routes: Routes = [
     component: WepayComponent
   },
   {
-    path: "payment",
+    path: "payment/:id",
     component: PaymentComponent
+  },
+  {
+    path: "paymentlinkdetails",
+    component: PaymentlinkDetailsComponent
   },
   {
     path: "",
