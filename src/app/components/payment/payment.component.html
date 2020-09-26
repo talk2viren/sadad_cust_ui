@@ -25,7 +25,7 @@
       <form [formGroup]="paymentForm" autocomplete="off">
         <div class="form-group">
           <label for="amount_paid">Amount Paid</label>
-          <input type="text" class="form-control"  placeholder="Enter amount" formControlName="amount_paid" required>
+          <input type="text" class="form-control"  placeholder="Enter amount" formControlName="amount_paid" required disabled>
           <div *ngIf="isControlHasError('amount_paid','required')" class="alert alert-danger">Amount is Required</div>
         </div>
         <div class="form-group">

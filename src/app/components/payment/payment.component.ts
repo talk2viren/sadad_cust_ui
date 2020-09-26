@@ -17,6 +17,7 @@ export class PaymentComponent implements OnInit {
  message:any;
  id:any;
  type:any;
+ userpaymentlist=[];
  constructor( private fb: FormBuilder,
               private router: Router,
               private route:ActivatedRoute,
@@ -28,6 +29,42 @@ export class PaymentComponent implements OnInit {
 		console.log("Params : "+JSON.stringify(params));
 	  this.id= params['id'];
 	  //this.type = params['type'];
+	  const formData: FormData = new FormData();
+	  var user_id=localStorage.getItem('currentUserId')
+     console.log(user_id)
+     formData.append("user_id", user_id);
+    const httpHeaders = new HttpHeaders();
+    httpHeaders.append('Content-Type','multipart/form-data');
+	//   this.user.usePaymentLinkDetails().subscribe((data: any) => {
+	// 	console.log(data.result)
+	this.user.usePaymentLinkDetails(formData).subscribe((res:any) => {  
+      
+		// this.userpaymentlist=res.result;
+		console.log(res.result)
+		for(var i=0;i<res.result.length; i++){
+   
+			if(res.result[i].id==this.id){
+				this.paymentForm.patchValue({
+				amount_paid: res.result[i].price,
+				//   email: res.result[i].email,
+				//   userName: res.result[i].username,
+				//   phone:res.result[i].phone,
+				//   userType:res.result[i].access
+				});
+			
+			}
+	
+		  }
+		
+  
+	  },
+		(err)=>{
+		console.log(err)
+		}
+		)  
+		
+		
+		
      
     })
   }
