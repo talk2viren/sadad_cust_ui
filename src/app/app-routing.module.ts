@@ -124,18 +124,26 @@ const routes: Routes = [
     path: "payment/:id",
     component: PaymentComponent
   },
+  // {
+  //   path: "paymentlinkdetails",
+  //   component: PaymentlinkDetailsComponent
+  // },
   {
+    
     path: "paymentlinkdetails",
-    component: PaymentlinkDetailsComponent
+    component: PaymentlinkDetailsComponent,
+    data: { showRootComponents: false } 
   },
   {
     path: "",
     redirectTo: "/login",
     pathMatch: "full"
-  },{
+  },
+  {
     path: "addcollector",
     component: AddcollectorComponent
-  },{
+  },
+  {
     path: "forgetpwd",
     component: ForgetpwdComponent
   },
