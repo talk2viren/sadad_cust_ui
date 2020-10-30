@@ -39,6 +39,7 @@ import { ForgetpwdComponent } from './components/forgetpwd/forgetpwd.component';
 import { FlatHistoryComponent } from './components/flat-history/flat-history.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { PaymentlinkDetailsComponent } from './components/paymentlink-details/paymentlink-details.component';
+import { ThankYouComponent } from './components/thank-you/thank-you.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { PaymentlinkDetailsComponent } from './components/paymentlink-details/pa
     ForgetpwdComponent,
     FlatHistoryComponent,
     PaymentComponent,
-    PaymentlinkDetailsComponent
+    PaymentlinkDetailsComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,

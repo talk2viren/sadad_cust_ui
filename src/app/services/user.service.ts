@@ -186,6 +186,20 @@ export class UserService {
       );
   } 
 
+  getPaymentStatus(id: string) {
+    return this.http.get(this.endpoint + 'payment/paymentStatus/' + id)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+
+          //Handle the error here
+
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
+
   
   
 handleError(error) {

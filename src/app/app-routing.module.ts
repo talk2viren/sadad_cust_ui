@@ -35,6 +35,7 @@ import { AddcollectorComponent } from './components/addcollector/addcollector.co
 import { FlatHistoryComponent } from "./components/flat-history/flat-history.component";
 import { PaymentComponent } from "./components/payment/payment.component";
 import { PaymentlinkDetailsComponent } from "./components/paymentlink-details/paymentlink-details.component";
+import { ThankYouComponent } from "./components/thank-you/thank-you.component";
 
 const routes: Routes = [
   {
@@ -123,6 +124,11 @@ const routes: Routes = [
   {
     path: "payment/:id",
     component: PaymentComponent
+  },
+  {
+    path: "thankyou/:paymentId",
+    //path: "thankyou",
+    component: ThankYouComponent
   },
   // {
   //   path: "paymentlinkdetails",

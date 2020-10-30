@@ -88,7 +88,7 @@ export class PayLoanComponent implements OnInit {
 			
 			const formData: FormData = new FormData();
 			// formData.append("loan_id",  this.id);
-			// formData.append("amount_paid", this.loanForm.value.amount_paid);
+			formData.append("amount_paid", this.loanForm.value.amount_paid);
 			// formData.append("customer_id", customer_id);
 			// formData.append("description", this.loanForm.value.description);
 		
@@ -99,7 +99,7 @@ export class PayLoanComponent implements OnInit {
 			this.user.checkout(formData).subscribe((res: any)=>{
 				//console.log(res.result.Data.InvoiceURL)
 				
-					//this.router.navigate([res.result.Data.InvoiceURL]);
+					//this.router.navigate(['/thankyou']);
 					window.location.href = res.result.Data.InvoiceURL;
 			
 			
@@ -135,6 +135,7 @@ export class PayLoanComponent implements OnInit {
 			//console.log("Pay rent");
 
 			const formData: FormData = new FormData();
+			formData.append("amount_paid", this.loanForm.value.amount_paid);
 			
 		
 			
@@ -142,10 +143,11 @@ export class PayLoanComponent implements OnInit {
 			httpHeaders.append('Content-Type','multipart/form-data');
 			
 			this.user.checkout(formData).subscribe((res: any)=>{
-				//console.log(res.result.Data.InvoiceURL)
+			console.log(res.result)
 				
 					//this.router.navigate([res.result.Data.InvoiceURL]);
 					window.location.href = res.result.Data.InvoiceURL;
+					//this.router.navigate(['/thankyou']);
 			
 				
 				}, (err)=>{
