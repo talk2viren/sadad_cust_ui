@@ -18,11 +18,21 @@ export class ThankYouComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params=>{
-      console.log("Params : "+JSON.stringify(params));
-      this.id= params['id'];
-     
-       
-      })
+			this.id= params['Id'];
+		})
+        console.log(this.id)
+        
+
+        this.user.getPaymentStatus(this.id).
+	     subscribe((data:any)=>{
+		   
+	        console.log(data)
+        },(error)=>{
+          console.log(error)
+				// const message = error.message;
+				// this.layoutUtilsService.showActionNotification(message, MessageType.Create, 5000, true, true);
+			}
+    );
   }
 
 }

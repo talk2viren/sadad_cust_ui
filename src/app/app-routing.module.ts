@@ -126,9 +126,10 @@ const routes: Routes = [
     component: PaymentComponent
   },
   {
-    path: "thankyou/:paymentId",
-    //path: "thankyou",
-    component: ThankYouComponent
+    //path: "thankyou/:paymentId",
+    path: "thankyou",
+    component: ThankYouComponent,
+    
   },
   // {
   //   path: "paymentlinkdetails",
