@@ -36,6 +36,7 @@ import { FlatHistoryComponent } from "./components/flat-history/flat-history.com
 import { PaymentComponent } from "./components/payment/payment.component";
 import { PaymentlinkDetailsComponent } from "./components/paymentlink-details/paymentlink-details.component";
 import { ThankYouComponent } from "./components/thank-you/thank-you.component";
+import { AuthGuard } from "./components/auth/auth.guard";
 
 const routes: Routes = [
   {
@@ -95,40 +96,49 @@ const routes: Routes = [
   }, 
   {
     path: "userloan",
-    component: UserLoanComponent
+    component: UserLoanComponent,
+    canActivate:[AuthGuard]
   }, 
   {
     path: "payloan/:id",
-    component: PayLoanComponent
+    component: PayLoanComponent,
+    canActivate:[AuthGuard]
   }, 
   {
     path: "pay/:id/:type",
-    component: PayLoanComponent
+    component: PayLoanComponent,
+    canActivate:[AuthGuard]
   }, 
   {
     path: "pay/:id/:type",
-    component: PayLoanComponent
+    component: PayLoanComponent,
+    canActivate:[AuthGuard]
   }, 
   {
     path: "loanhistory",
-    component: LoanHistoryComponent
+    component: LoanHistoryComponent,
+    canActivate:[AuthGuard]
   }, 
   {
     path: "flathistory",
-    component: FlatHistoryComponent
+    component: FlatHistoryComponent,
+    canActivate:[AuthGuard]
   }, 
   {
     path: "wepay",
-    component: WepayComponent
+    component: WepayComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: "payment/:id",
-    component: PaymentComponent
+    component: PaymentComponent,
+    canActivate:[AuthGuard]
   },
   {
     //path: "thankyou/:paymentId",
     path: "thankyou",
     component: ThankYouComponent,
+   
     
   },
   // {
@@ -139,7 +149,7 @@ const routes: Routes = [
     
     path: "paymentlinkdetails",
     component: PaymentlinkDetailsComponent,
-    data: { showRootComponents: false } 
+    canActivate:[AuthGuard] 
   },
   {
     path: "",

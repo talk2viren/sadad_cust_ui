@@ -40,6 +40,7 @@ import { FlatHistoryComponent } from './components/flat-history/flat-history.com
 import { PaymentComponent } from './components/payment/payment.component';
 import { PaymentlinkDetailsComponent } from './components/paymentlink-details/paymentlink-details.component';
 import { ThankYouComponent } from './components/thank-you/thank-you.component';
+import { AuthGuard } from './components/auth/auth.guard';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { ThankYouComponent } from './components/thank-you/thank-you.component';
     ReactiveFormsModule,
     
   ],
-  providers: [UserService],
+  //providers: [UserService],
+  providers: [{provide: LocationStrategy,useClass: HashLocationStrategy},AuthGuard,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
