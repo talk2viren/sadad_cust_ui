@@ -99,8 +99,8 @@ export class PayLoanComponent implements OnInit {
 			this.user.checkout(formData).subscribe((res: any)=>{
 				//console.log(res.result.Data.InvoiceURL)
 				
-					//this.router.navigate(['/thankyou']);
-					window.location.href = res.result.Data.InvoiceURL;
+					this.router.navigate(['/thankyou']);
+					//window.location.href = res.result.Data.InvoiceURL;
 			
 			
 				
@@ -146,8 +146,8 @@ export class PayLoanComponent implements OnInit {
 			console.log(res.result)
 				
 					//this.router.navigate([res.result.Data.InvoiceURL]);
-					window.location.href = res.result.Data.InvoiceURL;
-					//this.router.navigate(['/thankyou']);
+					//window.location.href = res.result.Data.InvoiceURL;
+					this.router.navigate(['/thankyou']);
 			
 				
 				}, (err)=>{
