@@ -17,9 +17,13 @@ export class ThankYouComponent implements OnInit {
               private user:UserService) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params=>{
-			this.id= params['Id'];
-		})
+    // this.route.params.subscribe(params=>{
+		// 	this.id= params['Id'];
+    // })
+    this.route.queryParams.subscribe(params => {
+      this.id = params['Id'];
+      
+    });
         console.log(this.id)
         
 
