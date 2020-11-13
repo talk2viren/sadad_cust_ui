@@ -37,6 +37,7 @@ import { PaymentComponent } from "./components/payment/payment.component";
 import { PaymentlinkDetailsComponent } from "./components/paymentlink-details/paymentlink-details.component";
 import { ThankYouComponent } from "./components/thank-you/thank-you.component";
 import { AuthGuard } from "./components/auth/auth.guard";
+import { UpdateuserComponent } from "./components/updateuser/updateuser.component";
 
 const routes: Routes = [
   {
@@ -163,6 +164,10 @@ const routes: Routes = [
   {
     path: "forgetpwd",
     component: ForgetpwdComponent
+  },
+  {
+    path: "updateprofile",
+    component: UpdateuserComponent
   },
    {
     path: "**",

@@ -41,6 +41,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { PaymentlinkDetailsComponent } from './components/paymentlink-details/paymentlink-details.component';
 import { ThankYouComponent } from './components/thank-you/thank-you.component';
 import { AuthGuard } from './components/auth/auth.guard';
+import { UpdateuserComponent } from './components/updateuser/updateuser.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { AuthGuard } from './components/auth/auth.guard';
     FlatHistoryComponent,
     PaymentComponent,
     PaymentlinkDetailsComponent,
-    ThankYouComponent
+    ThankYouComponent,
+    UpdateuserComponent
   ],
   imports: [
     BrowserModule,

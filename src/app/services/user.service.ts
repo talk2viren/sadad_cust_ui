@@ -45,6 +45,37 @@ export class UserService {
       );
   }
 
+
+  updateUser(formData) {
+    return this.http.post(this.endpoint+'user/updateCollector', formData)
+    .pipe(
+        // retry(1),
+        // catchError(this.handleError)
+        catchError((err) => {
+            console.log('error caught in service')
+            console.error(err);
+   
+            //Handle the error here
+   
+            return throwError(err);    //Rethrow it back to component
+          })
+    );
+  }
+
+  getUsers() {
+    return this.http.get(this.endpoint + 'user/getUsers')
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+
+          //Handle the error here
+
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
+
   userLoan(FormData) {
     return this.http.post(this.endpoint + 'payment/userLoan', FormData)
       .pipe(
