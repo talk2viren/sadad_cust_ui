@@ -150,7 +150,7 @@ const routes: Routes = [
     
     path: "paymentlinkdetails",
     component: PaymentlinkDetailsComponent,
-    canActivate:[AuthGuard] 
+    //canActivate:[AuthGuard] 
   },
   {
     path: "",
