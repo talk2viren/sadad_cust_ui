@@ -42,6 +42,7 @@ import { PaymentlinkDetailsComponent } from './components/paymentlink-details/pa
 import { ThankYouComponent } from './components/thank-you/thank-you.component';
 import { AuthGuard } from './components/auth/auth.guard';
 import { UpdateuserComponent } from './components/updateuser/updateuser.component';
+import { NewcustomerpaymentLinkComponent } from './components/newcustomerpayment-link/newcustomerpayment-link.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { UpdateuserComponent } from './components/updateuser/updateuser.componen
     PaymentComponent,
     PaymentlinkDetailsComponent,
     ThankYouComponent,
-    UpdateuserComponent
+    UpdateuserComponent,
+    NewcustomerpaymentLinkComponent
   ],
   imports: [
     BrowserModule,
