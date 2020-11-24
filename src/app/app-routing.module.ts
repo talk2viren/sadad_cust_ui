@@ -154,7 +154,7 @@ const routes: Routes = [
     //canActivate:[AuthGuard] 
   },
   {
-    path: 'payment/:id/:user_id',
+    path: 'newcustomerpayment/:id',
     component: NewcustomerpaymentLinkComponent
   },
   {

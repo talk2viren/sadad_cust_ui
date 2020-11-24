@@ -26,18 +26,18 @@ export class NewcustomerpaymentLinkComponent implements OnInit {
   ngOnInit() {
     this.initLoanForm();
     this.route.params.subscribe(params=>{
-		console.log("Params : "+JSON.stringify(params));
+		//console.log("Params : "+JSON.stringify(params));
 	  this.id= params['id'];
-	  this.user_id = params['user_id'];
+	  //this.user_id = params['user_id'];
 	  const formData: FormData = new FormData();
 	  // var user_id=localStorage.getItem('currentUserId')
     //  console.log(user_id)
-     formData.append("user_id", this.user_id);
+     formData.append("id", this.id);
     const httpHeaders = new HttpHeaders();
     httpHeaders.append('Content-Type','multipart/form-data');
 	//   this.user.usePaymentLinkDetails().subscribe((data: any) => {
 	// 	console.log(data.result)
-	this.user.usePaymentLinkDetails(formData).subscribe((res:any) => {  
+	this.user.usePaymentLinkDetails1(formData).subscribe((res:any) => {  
       
 		// this.userpaymentlist=res.result;
 		console.log(res.result)
