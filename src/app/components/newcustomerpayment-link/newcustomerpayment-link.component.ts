@@ -110,9 +110,10 @@ export class NewcustomerpaymentLinkComponent implements OnInit {
 			httpHeaders.append('Content-Type','multipart/form-data');
 			
 			this.user.pay(formData).subscribe((res: any)=>{
-				console.log(res)
-				
-					this.router.navigate(['/paymentlinkdetails']);
+				//console.log(res)
+				alert("Payment Done Successfully");
+				this.paymentForm.reset();
+				//this.router.navigate(['/paymentlinkdetails']);
 			
 			
 				
