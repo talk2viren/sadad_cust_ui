@@ -51,12 +51,13 @@
                 <tr>
                   <th>Loan id</th>
                   <th>Loan Type</th>
+                  <th>Collector Name</th>
                   <th>Descrpition</th>
                    <th>Total Amount</th>
                     <th>Monthly Payment</th>
                     <th>Amount Paid</th>
                     <th>Due Amount</th>
-                    <th>Monthly Due Amount</th>
+                    <!-- <th>Monthly Due Amount</th> -->
                     <th>Paid Date</th>
                     <th>Next Due Date</th>
                   
@@ -69,12 +70,13 @@
                 <tr *ngFor="let list of userloanhistorylist">
                     <td>{{list.loan_id}}</td>
                     <td>{{list.loan_type}}</td>
+                    <td>{{list.collector_name}}</td>
                     <td>{{list.descrpition}}</td>
                     <td>{{list.total_amount}}</td>
                     <td>{{list.monthly_payment}}</td>
                     <td>{{list.amount_paid}}</td>
                     <td>{{list.due_amount}}</td>
-                    <td>{{list.total_dueamount}}</td>
+                    <!-- <td>{{list.total_dueamount}}</td> -->
                     <td>{{list.updatedAt}}</td>
                     <td>{{list.nextdue_date}}</td>
                     <!-- <td>{{list.total_amount_paid}}</td> 

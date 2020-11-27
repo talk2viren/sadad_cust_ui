@@ -46,6 +46,7 @@ export class NewcustomerpaymentLinkComponent implements OnInit {
 			if(res.result[i].id==this.id){
 				this.paymentForm.patchValue({
 				amount_paid: res.result[i].price,
+				collector_name:res.result[i].collector_name
 				//   email: res.result[i].email,
 				//   userName: res.result[i].username,
 				//   phone:res.result[i].phone,
@@ -71,14 +72,9 @@ export class NewcustomerpaymentLinkComponent implements OnInit {
 
   initLoanForm() {
 		this.paymentForm = this.fb.group({
-			amount_paid: ['', Validators.compose([
-				Validators.required,
-			])
-			],
-			descrpition: ['', Validators.compose([
-				Validators.required,
-		  ])
-			]
+			collector_name: [''],
+			amount_paid: [''],
+			descrpition: ['']
 		});
   }
 

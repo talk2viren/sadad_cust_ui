@@ -2,19 +2,33 @@
   <app-page-header></app-page-header>
   <section>
     <div class="container">
-      <form [formGroup]="paymentForm" autocomplete="off">
-        <div class="form-group">
-          <label for="amount_paid">Amount Paid</label>
-          <input type="text" class="form-control"  placeholder="Enter amount" formControlName="amount_paid" required disabled>
-          <div *ngIf="isControlHasError('amount_paid','required')" class="alert alert-danger">Amount is Required</div>
+      <div style="height: 100px;width: 100px;text-align: center;margin-left: 42%;">
+        <img src="assets/images/logo.png" alt="">
+      </div>
+      <div style="background-color: #ffff;width: 50%;border: 2px solid #355c84;padding: 50px;margin-top: -20px;margin-left: 250px;">
+        <div style="background-color:#355c84;border: 1px solid #355c84;padding: -10px;margin:-50px;color: #fff;text-align: center;">Payment Confirmation</div>
+        <div style="margin-top: 60px;">
+          <form [formGroup]="paymentForm" autocomplete="off">
+            <div class="form-group" style="white-space:nowrap">
+              <label for="collector_name">Payment To</label>
+              <input type="text" class="form-control"  placeholder="Enter collector_name" formControlName="collector_name" disabled>
+             
+            </div>
+            <div class="form-group" style="white-space:nowrap">
+              <label for="amount_paid">Amount</label>
+              <input type="text" class="form-control"  placeholder="Enter amount" formControlName="amount_paid" disabled>
+              <!-- <div *ngIf="isControlHasError('amount_paid','required')" class="alert alert-danger">Amount is Required</div> -->
+            </div>
+            <div class="form-group">
+              <label for="descrpition">Description</label>
+              <input type="text" class="form-control" placeholder="Enter Description" formControlName="descrpition" >
+              
+            </div>
+           <button style="background-color: #355c84;margin-left:40% ;" type="submit" class="btn btn-primary" (click)="submit()">Pay Now</button>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="descrpition">Description</label>
-          <input type="text" class="form-control" placeholder="Enter Description" formControlName="descrpition" required>
-          <div *ngIf="isControlHasError('descrpition','required')" class="alert alert-danger">Description is Required</div>
-        </div>
-       <button type="submit" class="btn btn-primary" (click)="submit()">Send</button>
-      </form>
+      </div>
+     
     </div>
   </section>
   </div>
