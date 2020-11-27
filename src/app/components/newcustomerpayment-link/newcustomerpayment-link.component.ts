@@ -46,7 +46,9 @@ export class NewcustomerpaymentLinkComponent implements OnInit {
 			if(res.result[i].id==this.id){
 				this.paymentForm.patchValue({
 				amount_paid: res.result[i].price,
-				collector_name:res.result[i].collector_name
+				collector_name:res.result[i].collector_name,
+				descrpition:res.result[i].comment
+
 				//   email: res.result[i].email,
 				//   userName: res.result[i].username,
 				//   phone:res.result[i].phone,
