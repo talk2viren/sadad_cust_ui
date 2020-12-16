@@ -62,31 +62,6 @@ export class PayLoanComponent implements OnInit {
 		this.loading = true;
 		if(this.type == 'loan')
 		{
-			var customer_id=localStorage.getItem('currentUserId')
-			const formData: FormData = new FormData();
-			formData.append("loan_id",  this.id);
-			formData.append("amount_paid", this.loanForm.value.amount_paid);
-			formData.append("customer_id", customer_id);
-			formData.append("description", this.loanForm.value.description);
-		
-			
-			const httpHeaders = new HttpHeaders();
-			httpHeaders.append('Content-Type','multipart/form-data');
-			
-			this.user.payLoan(formData).subscribe((res: any)=>{
-				console.log(res)
-				
-					this.router.navigate(['/loanhistory']);
-			
-			
-				
-				}, (err)=>{
-					console.log(err)
-				
-				}
-			)
-			
-			
 			// var customer_id=localStorage.getItem('currentUserId')
 			// const formData: FormData = new FormData();
 			// formData.append("loan_id",  this.id);
@@ -94,14 +69,14 @@ export class PayLoanComponent implements OnInit {
 			// formData.append("customer_id", customer_id);
 			// formData.append("description", this.loanForm.value.description);
 		
-						
+			
 			// const httpHeaders = new HttpHeaders();
 			// httpHeaders.append('Content-Type','multipart/form-data');
 			
-			// this.user.checkout(formData).subscribe((res: any)=>{
-			// 	//console.log(res.result.Data.InvoiceURL)
+			// this.user.payLoan(formData).subscribe((res: any)=>{
+			// 	console.log(res)
 				
-			// 	window.location.href = res.result.Data.InvoiceURL;
+			// 		this.router.navigate(['/loanhistory']);
 			
 			
 				
@@ -110,6 +85,31 @@ export class PayLoanComponent implements OnInit {
 				
 			// 	}
 			// )
+			
+			
+			var customer_id=localStorage.getItem('currentUserId')
+			const formData: FormData = new FormData();
+			formData.append("loan_id",  this.id);
+			formData.append("amount_paid", this.loanForm.value.amount_paid);
+			formData.append("customer_id", customer_id);
+			formData.append("description", this.loanForm.value.description);
+		
+						
+			const httpHeaders = new HttpHeaders();
+			httpHeaders.append('Content-Type','multipart/form-data');
+			
+			this.user.checkout(formData).subscribe((res: any)=>{
+				//console.log(res.result.Data.InvoiceURL)
+				
+				window.location.href = res.result.Data.InvoiceURL;
+			
+			
+				
+				}, (err)=>{
+					console.log(err)
+				
+				}
+			)
 		}
 		else if( this.type== "rent")
 		{
