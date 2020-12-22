@@ -34,12 +34,12 @@ export class ThankYouComponent implements OnInit {
 
         this.user.getPaymentStatus(this.id).
 	      subscribe((data:any)=>{
-          this.status=data.status;
-          this.collector_name=data.collector_name;
-          this.amount=data.amount;
-          this.description=data.description;
-          this.payment_id=data.payment_id;
-	        console.log(data)
+          this.status=data.result.status;
+          this.collector_name=data.result.collector_name;
+          this.amount=data.result.amount;
+          this.description=data.result.description;
+          this.payment_id=data.result.payment_id;
+	        console.log(data.result)
         },(error)=>{
           console.log(error)
 				// const message = error.message;
