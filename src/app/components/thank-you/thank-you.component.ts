@@ -11,6 +11,11 @@ import { UserService } from "../../../app/services/user.service";
 })
 export class ThankYouComponent implements OnInit {
   id:any;
+  status:any;
+  collector_name:any;
+  amount:any;
+  description:any;
+  payment_id:any;
   constructor(private fb: FormBuilder,
               private router: Router,
               private route:ActivatedRoute,
@@ -28,8 +33,12 @@ export class ThankYouComponent implements OnInit {
         
 
         this.user.getPaymentStatus(this.id).
-	     subscribe((data:any)=>{
-		   
+	      subscribe((data:any)=>{
+          this.status=data[0].status;
+          this.collector_name=data[0].collector_name;
+          this.amount=data[0].amount;
+          this.description=data[0].description;
+          this.payment_id=data[0].payment_id;
 	        console.log(data)
         },(error)=>{
           console.log(error)
