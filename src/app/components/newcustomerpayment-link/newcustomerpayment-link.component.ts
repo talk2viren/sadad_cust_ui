@@ -107,19 +107,32 @@ export class NewcustomerpaymentLinkComponent implements OnInit {
 			const httpHeaders = new HttpHeaders();
 			httpHeaders.append('Content-Type','multipart/form-data');
 			
-			this.user.pay(formData).subscribe((res: any)=>{
-				//console.log(res)
-				alert("Payment Done Successfully");
-				this.paymentForm.reset();
-				//this.router.navigate(['/paymentlinkdetails']);
+			// this.user.pay(formData).subscribe((res: any)=>{
+			// 	//console.log(res)
+			// 	alert("Payment Done Successfully");
+			// 	this.paymentForm.reset();
+			// 	//this.router.navigate(['/paymentlinkdetails']);
 			
 			
 				
-				}, (err)=>{
-					console.log(err)
+			// 	}, (err)=>{
+			// 		console.log(err)
 				
-				}
-			)
+			// 	}
+			// )
+			this.user.checkout(formData).subscribe((res: any)=>{
+				console.log(res.result)
+					
+						//this.router.navigate([res.result.Data.InvoiceURL]);
+						window.location.href = res.result.Data.InvoiceURL;
+						//this.router.navigate(['/thankyou']);
+				
+					
+					}, (err)=>{
+						console.log(err)
+					
+					}
+				)
 		
 	
 	}
