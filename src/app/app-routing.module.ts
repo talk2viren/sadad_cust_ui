@@ -40,6 +40,7 @@ import { AuthGuard } from "./components/auth/auth.guard";
 import { UpdateuserComponent } from "./components/updateuser/updateuser.component";
 import { NewcustomerpaymentLinkComponent } from "./components/newcustomerpayment-link/newcustomerpayment-link.component";
 import { SendlinkPaymentconfirmationComponent } from "./components/sendlink-paymentconfirmation/sendlink-paymentconfirmation.component";
+import { QuickpayPaymentconfirmationComponent } from "./components/quickpay-paymentconfirmation/quickpay-paymentconfirmation.component";
 
 const routes: Routes = [
   {
@@ -147,6 +148,10 @@ const routes: Routes = [
   {
     path: "paymentonfirmation",
     component: SendlinkPaymentconfirmationComponent,
+  },
+  {
+    path: "quickpay-paymentonfirmation",
+    component: QuickpayPaymentconfirmationComponent,
   },
   // {
   //   path: "paymentlinkdetails",

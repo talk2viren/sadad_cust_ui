@@ -245,6 +245,20 @@ export class UserService {
       );
   }
 
+  getQuickpayPaymentStatus(id: string) {
+    return this.http.get(this.endpoint + 'payment/quickpayGetPaymentStatus/' + id)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in service')
+          console.error(err);
+
+          //Handle the error here
+
+          return throwError(err);    //Rethrow it back to component
+        })
+      );
+  }
+
   
   
 handleError(error) {
