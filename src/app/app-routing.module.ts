@@ -39,6 +39,7 @@ import { ThankYouComponent } from "./components/thank-you/thank-you.component";
 import { AuthGuard } from "./components/auth/auth.guard";
 import { UpdateuserComponent } from "./components/updateuser/updateuser.component";
 import { NewcustomerpaymentLinkComponent } from "./components/newcustomerpayment-link/newcustomerpayment-link.component";
+import { SendlinkPaymentconfirmationComponent } from "./components/sendlink-paymentconfirmation/sendlink-paymentconfirmation.component";
 
 const routes: Routes = [
   {
@@ -143,6 +144,10 @@ const routes: Routes = [
    
     
   },
+  {
+    path: "paymentonfirmation",
+    component: SendlinkPaymentconfirmationComponent,
+  },
   // {
   //   path: "paymentlinkdetails",
   //   component: PaymentlinkDetailsComponent
@@ -154,7 +159,7 @@ const routes: Routes = [
     //canActivate:[AuthGuard] 
   },
   {
-    path: 'newcustomerpayment/:id',
+    path: "newcustomerpayment/:id",
     component: NewcustomerpaymentLinkComponent
   },
   {
