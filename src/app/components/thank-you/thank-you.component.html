@@ -10,45 +10,60 @@
       <button type="button" class="btn btn-primary btn-xs" [routerLink]="['/loanhistory']">Back</button>
     </div> -->
     <div class="container">
-      <div style="height: 100px;width: 100px;text-align: center;margin-left: 42%;">
-        <img src="assets/images/logo.png" alt="">
+      <div class="row justify-content-center"> 
+        <!-- style="height: 40px;width: 40px;text-align: center;margin-left: 42%;" -->
+        <!-- <div class="col-md-6 col-md-offset-3"> -->
+          <img src="assets/images/logo.png" alt="" style="width:15% !important;text-align:center;">
+        <!-- </div> -->
       </div>
-      <div style="background-color: #ffff;width: 50%;border: 2px solid #355c84;padding: 50px;margin-top: -20px;margin-left: 250px;">
+      <div class="row justify-content-center"> 
+        <!-- style="background-color: #ffff;width: 50%;border: 2px solid #355c84;padding: 50px;margin-top: -20px;margin-left: 250px;" -->
+      <div class="col-md-6 col-md-offset-3 align-center" style="background-color: #ffff;border: 2px solid #355c84;padding-right: 0px;padding-left: 0px;">
+        <!-- style="background-color:#355c84;border: 1px solid #355c84;padding: -10px;margin:-30px;color: #fff;text-align: center;" -->
+        <div class="col-md-12" style="background-color:#355c84;border: 1px solid #355c84;color: #fff;text-align: center;">Payment Confirmation</div>
+        <div style="margin-top: 40px;">
+           <div class="col">
+              Status:
+            </div>
+            <div class="col">
+              {{this.status}}
+            </div>
+           <div class="col">
+              Paid To:
+            </div>
+            <div class="col">
+              {{this.collector_name}}
+            </div>
+         
+            <div class="col">
+              Amount:
+            </div>
+            <div class="col">
+              {{this.amount}}
+            </div>
+            <div class="col">
+              Notes:
+            </div>
+            <div class="col">
+              {{this.description}}
+            </div>
+            <div class="col">
+              Payment Id:
+            </div>
+            <div class="col">
+              {{this.payment_id}}
+            </div>
+            <button [routerLink]="['../home-01']" style="background-color: #355c84;margin-left:40% ;" type="submit" class="btn btn-primary">Close</button>
+          
+        </div>
+      </div>
+      
+    </div>
+  
+      <!-- <div style="background-color: #ffff;width: 50%;border: 2px solid #355c84;padding: 50px;margin-top: -20px;margin-left: 250px;">
         <div style="background-color:#355c84;border: 1px solid #355c84;padding: -10px;margin:-50px;color: #fff;text-align: center;">Payment Details</div>
         <div style="margin-top: 60px;">
-      <!-- <form [formGroup]="paymentForm" autocomplete="off">
-        <div class="form-group row" >
-          <label for="collector_name" class="col-sm-4 col-form-label">Status:</label>
-          <div class="col-sm-8">
-            <input type="text" class="form-control"  placeholder="Payment Confirmed" formControlName="collector_name"  style="border:none;outline: none;pointer-events: none; ">
-          </div>
-        </div>
-        <div class="form-group row" >
-          <label for="collector_name" class="col-sm-4 col-form-label">Paid To:</label>
-          <div class="col-sm-8">
-            <input type="text" class="form-control"  placeholder="Collector Name" formControlName="collector_name"  style="border:none;outline: none;pointer-events: none; ">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="amount_paid" class="col-sm-4 col-form-label">Amount:</label>
-          <div class="col-sm-8">
-          <input type="text" class="form-control"  placeholder="100 KD" formControlName="amount_paid" style="border:none;outline: none;pointer-events: none; ">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="descrpition" class="col-sm-4 col-form-label">Notes:</label>
-          <div class="col-sm-8">
-              <input type="text" class="form-control" placeholder="Description" formControlName="descrpition" style="border:none;outline: none;pointer-events: none; " >
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="descrpition" class="col-sm-4 col-form-label">Payment Id:</label>
-          <div class="col-sm-8">
-              <input type="text" class="form-control" placeholder="xxxxx" formControlName="descrpition" style="border:none;outline: none;pointer-events: none; " >
-          </div>
-        </div>
-       <button style="background-color: #355c84;margin-left:40% ;" type="submit" class="btn btn-primary" (click)="submit()">Close</button>
-      </form> -->
+      
       <div class="row">
         <div class="col-lg-6">
           Status:
@@ -84,12 +99,12 @@
         <button [routerLink]="['../home-01']" style="background-color: #355c84;margin-left:40% ;" type="submit" class="btn btn-primary">Close</button>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 </section>
 
   <!-- Payment service section start -->
-  <section class="payment-service bg-offwhite">
+  <!-- <section class="payment-service bg-offwhite">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6">
@@ -102,7 +117,7 @@
               <li><i class="fas fa-check-circle"></i> Accessable anywhere and any time using our mobile app on android and iOS.</li>
               <li><i class="fas fa-check-circle"></i> Fast and secure money transfer.</li>
             </ul>
-            <!-- <a href="javascript:void(0)" class="btn btn-default"><span class="bh"></span> <span>try it now</span></a> -->
+             <a href="javascript:void(0)" class="btn btn-default"><span class="bh"></span> <span>try it now</span></a> 
           </div>
         </div>
         <div class="col-md-6">
@@ -112,11 +127,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Payment service section end -->
 
    <!-- Testimonial section start -->
-   <section class="testimonial-v2">
+   <!-- <section class="testimonial-v2">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 m-auto">
@@ -157,8 +172,8 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Testimonial section end -->
-  <app-page-footer></app-page-footer>
+  <!-- <app-page-footer></app-page-footer> -->
 </div>
 
