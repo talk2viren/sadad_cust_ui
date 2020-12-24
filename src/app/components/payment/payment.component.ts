@@ -105,7 +105,7 @@ export class PaymentComponent implements OnInit {
 			formData.append("amount_paid", this.paymentForm.value.amount_paid);
 			// formData.append("customer_id", customer_id);
 			formData.append("description", this.paymentForm.value.description);
-		    console.log(this.paymentForm.value.descrpition)
+		    console.log(this.paymentForm.value.description)
 			
 			const httpHeaders = new HttpHeaders();
 			httpHeaders.append('Content-Type','multipart/form-data');
