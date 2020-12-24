@@ -43,6 +43,7 @@ import { ThankYouComponent } from './components/thank-you/thank-you.component';
 import { AuthGuard } from './components/auth/auth.guard';
 import { UpdateuserComponent } from './components/updateuser/updateuser.component';
 import { NewcustomerpaymentLinkComponent } from './components/newcustomerpayment-link/newcustomerpayment-link.component';
+import { SendlinkPaymentconfirmationComponent } from './components/sendlink-paymentconfirmation/sendlink-paymentconfirmation.component';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { NewcustomerpaymentLinkComponent } from './components/newcustomerpayment
     PaymentlinkDetailsComponent,
     ThankYouComponent,
     UpdateuserComponent,
-    NewcustomerpaymentLinkComponent
+    NewcustomerpaymentLinkComponent,
+    SendlinkPaymentconfirmationComponent
   ],
   imports: [
     BrowserModule,
