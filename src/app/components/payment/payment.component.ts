@@ -75,7 +75,7 @@ export class PaymentComponent implements OnInit {
 				Validators.required,
 			])
 			],
-			descrpition: ['', Validators.compose([
+			description: ['', Validators.compose([
 				Validators.required,
 		  ])
 			]

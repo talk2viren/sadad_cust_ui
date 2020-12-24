@@ -76,7 +76,7 @@ export class NewcustomerpaymentLinkComponent implements OnInit {
 		this.paymentForm = this.fb.group({
 			collector_name: [''],
 			amount_paid: [''],
-			descrpition: ['']
+			description: ['']
 		});
   }
 

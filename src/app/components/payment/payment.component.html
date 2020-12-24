@@ -31,7 +31,7 @@
         <div class="form-group">
           <label for="descrpition">Description</label>
           <input type="text" class="form-control" placeholder="Enter Description" formControlName="description" required>
-          <div *ngIf="isControlHasError('descrpition','required')" class="alert alert-danger">Description is Required</div>
+          <div *ngIf="isControlHasError('description','required')" class="alert alert-danger">Description is Required</div>
         </div>
        <button type="submit" class="btn btn-primary" (click)="submit()">Send</button>
       </form>
