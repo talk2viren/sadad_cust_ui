@@ -48,5 +48,9 @@ export class QuickpayPaymentconfirmationComponent implements OnInit {
     );
   }
 
+  goToUrl(): void {
+    document.location.href = 'http://sadad.thewebsitecart.com/collector/dist/#/payment/quickpaymentlinkdetails';
+}
+
 }
 

@@ -146,11 +146,11 @@ const routes: Routes = [
     
   },
   {
-    path: "paymentonfirmation",
+    path: "paymentconfirmation",
     component: SendlinkPaymentconfirmationComponent,
   },
   {
-    path: "quickpay-paymentonfirmation",
+    path: "quickpay-paymentconfirmation",
     component: QuickpayPaymentconfirmationComponent,
   },
   // {
