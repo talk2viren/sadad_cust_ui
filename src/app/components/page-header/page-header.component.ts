@@ -1,11 +1,16 @@
 import {Component, OnInit} from "@angular/core";
 import { Router } from "@angular/router";
+// Translate
+import { TranslateService } from '@ngx-translate/core';
 
 declare let $: any;
 
 @Component({selector: "app-page-header", templateUrl: "./page-header.component.html", styleUrls: ["./page-header.component.scss"]})
 export class PageHeaderComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+              private translate: TranslateService) {
+                translate.setDefaultLang('en');
+              }
 
   initialization() {
     //======================
@@ -47,6 +52,7 @@ export class PageHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.translate.use(localStorage.getItem('lang'));
     this.initialization();
   }
 

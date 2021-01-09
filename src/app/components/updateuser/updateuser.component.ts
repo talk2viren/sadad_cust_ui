@@ -3,6 +3,8 @@ import { UserService } from 'src/app/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
+// Translate
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-updateuser',
@@ -17,9 +19,13 @@ export class UpdateuserComponent implements OnInit {
   constructor(private router: Router,
               private user:UserService,
               private activatedRoute: ActivatedRoute,
-              private fb: FormBuilder) { }
+			  private fb: FormBuilder,
+			  private translate: TranslateService) {
+				translate.setDefaultLang('en');
+			   }
 
   ngOnInit() {
+	this.translate.use(localStorage.getItem('lang'));
     this.initform();
     this.id=localStorage.getItem('currentUserId');
     

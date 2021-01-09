@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 
@@ -45,7 +45,10 @@ import { UpdateuserComponent } from './components/updateuser/updateuser.componen
 import { NewcustomerpaymentLinkComponent } from './components/newcustomerpayment-link/newcustomerpayment-link.component';
 import { SendlinkPaymentconfirmationComponent } from './components/sendlink-paymentconfirmation/sendlink-paymentconfirmation.component';
 import { QuickpayPaymentconfirmationComponent } from './components/quickpay-paymentconfirmation/quickpay-paymentconfirmation.component';
-
+// Translate
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader} from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -93,6 +96,13 @@ import { QuickpayPaymentconfirmationComponent } from './components/quickpay-paym
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    TranslateModule.forRoot({
+      	loader: {
+      	  provide: TranslateLoader,
+      	  useFactory: httpTranslateLoader,
+      	  deps: [HttpClient]
+      	}
+        })
     
   ],
   //providers: [UserService],
@@ -100,3 +110,6 @@ import { QuickpayPaymentconfirmationComponent } from './components/quickpay-paym
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function httpTranslateLoader(http: HttpClient) {
+	return new TranslateHttpLoader(http);
+  }

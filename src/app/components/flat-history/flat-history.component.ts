@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { HttpHeaders } from '@angular/common/http';
-
+// Translate
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-flat-history',
   templateUrl: './flat-history.component.html',
@@ -11,9 +12,13 @@ import { HttpHeaders } from '@angular/common/http';
 export class FlatHistoryComponent implements OnInit {
   userflathistorylist:any;
   constructor(private router: Router,
-    private user:UserService) { }
+              private user:UserService,
+              private translate: TranslateService) {
+                translate.setDefaultLang('en');
+               }
 
   ngOnInit() {
+    this.translate.use(localStorage.getItem('lang'));
     this.loadUserFlatHistoryList();
   }
   loadUserFlatHistoryList()

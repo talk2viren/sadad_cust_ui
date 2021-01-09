@@ -1,0 +1,98 @@
+  
+    {
+      "GENERAL": {
+        "LOGIN_BUTTON": "تسجيل الدخول",
+        "NO_ACCOUNT": "ليس لديك حساب؟",
+        "SIGNUP_BUTTON": "أفتح حساب الأن",
+        "FORGOT_BUTTON": "نسيت كلمة المرور",
+        "PAY_BUTTON":"دفع",
+        "SAVE_BUTTON":"حفظ",
+        "CHECKOUT_BUTTON":"الدفع"
+      },
+      "LOGIN": {
+        "TITLE": "تسجيل الدخول",
+        "BUTTON": "تسجيل الدخول"
+      },
+      "FORGOT": {
+        "TITLE": "نسيت كلمة المرور؟"
+      },
+      "INPUT": {
+        "EMAIL": "البريد الإلكتروني",
+        "PASSWORD": "كلمه السر"
+      },
+      "VALIDATION": {
+        "PLEASE_ENTER_EMAIL":"الرجاء إدخال البريد الإلكتروني",
+        "EMAIL_REQUIRED_FIELD": "البريد الالكتروني مطلوب",
+        "PASSWORD_REQUIRED_FIELD": "كلمة المرور مطلوبة",
+        "INVALID_EMAIL":"بريد إلكتروني خاطئ",
+        "ENTER_FULLNAME":"أدخل الاسم الكامل",
+        "FULLNAME_REQUIRED_FIELD": "الإسم الكامل ضروري",
+        "ENTER_PHONE":"أدخل الهاتف",
+        "ENTER_PASSWORD":"أدخل كلمة المرور",
+        "ENTER_AMOUNT":"أدخل المبلغ",
+        "AMOUNT_REQUIRED_FIELD":"المبلغ مطلوب",
+        "ENTER_DESCRIPTION":"أدخل الوصف",
+        "DESCRIPTION_REQUIRED_FIELD":"الوصف مطلوب"
+      },
+      "MENU":{
+        "HOME":"الصفحة الرئيسية",
+        "LOAN_PAYMENT_HISTORY":"تاريخ سداد القرض",
+        "FLAT_PAYMENT_HISTORY":"سجل الدفع الثابت",
+        "PAYMENT":"دفع",
+        "UPDATE_PROFILE":"تحديث الملف",
+        "LOGOUT":"تسجيل خروج"
+      },
+      "SUB":{
+        "DUE_PAY":"الدفع المستحق",
+        "WE_PAY":"نحن ندفع",
+        "PAYMENT_HISTORY":"تاريخ الدفع"
+      },
+      "HOME":{
+        "KWD":"دينار كويتي",
+        "TOTAL_DUE":"الاجمالي المستحق",
+        "MONTHLY_AMOUNT_TO_PAY":"المبلغ الشهري للدفع",
+        "MONTHLY_EMI":"القسط الشهري الشهري",
+        "MONTHLY_RENT":"الإيجار الشهري"
+      },
+      "LOANHISTORY":{
+        "LOAN_ID":"معرف القرض",
+        "LOAN_TYPE":"نوع القرض",
+        "COLLECTOR_NAME":"اسم الجامع",
+        "DESCRIPITION":"وصف",
+        "TOTAL_AMOUNT":"المبلغ الإجمالي",
+        "MONTHLY_PAYMENT":"الدفع الشهري",
+        "AMOUNT_PAID":"المبلغ المدفوع",
+        "DUE_AMOUNT":"مبلغ مستحق",
+        "PAID_DATE":"تاريخ المدفوعة",
+        "NEXT_DUE_DATE":"موعد الاستحقاق التالي"
+      },
+      "FLATHISTORY":{
+        "MONTHLY_RENT":"الإيجار الشهري"
+      },
+      "PAYMENT":{
+        "FULLNAME":"الاسم بالكامل",
+        "PHONE":"هاتف",
+        "CIVIL_ID":"معرّف مدني",
+        "PRICE":"السعر",
+        "COMMENT":"تعليق",
+        "STATUS":"الحالة",
+        "ACTION":"عمل"
+      },
+      "PAYLOAN":{
+        "AMOUNT_PAID":"المبلغ المدفوع"
+      }
+      
+    }
+  
+  
+  
+ 
+
+
+		
+	
+
+
+
+
+  

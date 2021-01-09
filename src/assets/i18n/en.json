@@ -1,0 +1,108 @@
+  
+    {
+      "GENERAL": {
+        "LOGIN_BUTTON": "LOGIN",
+        "NO_ACCOUNT": "Don\"t have an account?",
+        "SIGNUP_BUTTON": "Signup Now",
+        "FORGOT_BUTTON": "Forget Password",
+        "PAY_BUTTON":"Pay",
+        "SAVE_BUTTON":"Save",
+        "CHECKOUT_BUTTON":"Checkout"
+      },
+      "LOGIN": {
+        "TITLE": "Login Account",
+        "BUTTON": "Sign In"
+      },
+      "FORGOT": {
+        "TITLE": "Forget Password?"
+      },
+      "INPUT": {
+        "EMAIL": "Email",
+        "PASSWORD": "Password"
+      },
+      "VALIDATION": {
+        "PLEASE_ENTER_EMAIL":"Please Enter Email",
+        "EMAIL_REQUIRED_FIELD": "Email is Required",
+        "PASSWORD_REQUIRED_FIELD": "Password is Required",
+        "INVALID_EMAIL":"Invalid Email",
+        "ENTER_FULLNAME":"Enter fullname",
+        "FULLNAME_REQUIRED_FIELD": "Fullname is Required",
+        "ENTER_PHONE":"Enter Phone",
+        "ENTER_PASSWORD":"Enter Password",
+        "ENTER_AMOUNT":"Enter amount",
+        "AMOUNT_REQUIRED_FIELD":"Amount is Required",
+        "ENTER_DESCRIPTION":"Enter Description",
+        "DESCRIPTION_REQUIRED_FIELD":"Description is Required"
+      },
+      "MENU":{
+        "HOME":"Home",
+        "LOAN_PAYMENT_HISTORY":"Loan Payment History",
+        "FLAT_PAYMENT_HISTORY":"Flat Payment History",
+        "PAYMENT":"payment",
+        "UPDATE_PROFILE":"Update Profile",
+        "LOGOUT":"Log Out"
+      },
+      "SUB":{
+        "DUE_PAY":"Due Pay",
+        "WE_PAY":"We Pay",
+        "PAYMENT_HISTORY":"Payment History"
+      },
+      "HOME":{
+        "KWD":"KWD",
+        "TOTAL_DUE":"Total Due",
+        "MONTHLY_AMOUNT_TO_PAY":"Monthly amount to pay",
+        "MONTHLY_EMI":"Monthly EMI",
+        "MONTHLY_RENT":"Monthly Rent"
+      },
+      "LOANHISTORY":{
+        "LOAN_ID":"Loan id",
+        "LOAN_TYPE":"Loan Type",
+        "COLLECTOR_NAME":"Collector Name",
+        "DESCRIPITION":"Descrpition",
+        "TOTAL_AMOUNT":"Total Amount",
+        "MONTHLY_PAYMENT":"Monthly Payment",
+        "AMOUNT_PAID":"Amount Paid",
+        "DUE_AMOUNT":"Due Amount",
+        "PAID_DATE":"Paid Date",
+        "NEXT_DUE_DATE":"Next Due Date"
+      },
+      "FLATHISTORY":{
+        "MONTHLY_RENT":"Monthly Rent"
+      },
+      "PAYMENT":{
+        "FULLNAME":"Fullname",
+        "PHONE":"Phone",
+        "CIVIL_ID":"civil_id",
+        "PRICE":"Price",
+        "COMMENT":"Comment",
+        "STATUS":"Status",
+        "ACTION":"Action"
+      },
+      "PAYLOAN":{
+        "AMOUNT_PAID":"Amount Paid"
+      }
+      
+      
+                    
+                   
+                    
+                    
+                    
+                   
+                   
+                    
+
+    }
+  
+  
+  
+ 
+
+
+		
+	
+
+
+
+
+  

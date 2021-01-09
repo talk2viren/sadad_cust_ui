@@ -2,7 +2,8 @@ import {Component, OnInit} from "@angular/core";
 import {TimelineMax, Power1, Power2, Power4, Linear} from "gsap/all";
 import { UserService } from "src/app/services/user.service";
 import { HttpHeaders } from "@angular/common/http";
-
+// Translate
+import { TranslateService } from '@ngx-translate/core';
 declare let $: any;
 
 @Component({selector: "app-page-home01", templateUrl: "./page-home01.component.html", styleUrls: ["./page-home01.component.scss"]})
@@ -14,7 +15,10 @@ export class PageHome01Component implements OnInit {
   loanlist:any;
   amounttopaid:any;
   rentList:any;
-  constructor(private user:UserService) {}
+  constructor(private user:UserService,
+             private translate: TranslateService) {
+              translate.setDefaultLang('en');
+             }
 
   initialization() {
     //======================
@@ -150,6 +154,7 @@ export class PageHome01Component implements OnInit {
   }
 
   ngOnInit() {
+    this.translate.use(localStorage.getItem('lang'));
     this.initialization();
     this.GetuserDetail();
   }

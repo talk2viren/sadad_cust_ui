@@ -43,19 +43,19 @@
           </ul>
         </li>
         <li><a routerLink="/contact">Contact</a></li> -->
-        <li><a routerLink="/home-01">Home</a></li>
+        <li><a routerLink="/home-01">{{'MENU.HOME' | translate }}</a></li>
         <!-- <li><a routerLink="/userloan">Due Pay</a></li>
         <li><a routerLink="/how-it-works-receive">We Pay</a></li> -->
         <!-- <li><a routerLink="/home-01">Rent</a></li> -->
-        <li><a routerLink="/loanhistory">Loan Payment History</a></li> 
-        <li><a routerLink="/flathistory">Flat Payment History</a></li> 
-        <li><a routerLink="/paymentlinkdetails">payment</a></li>
-        <li><a routerLink="/updateprofile">Update Profile</a></li>
+        <li><a routerLink="/loanhistory">{{'MENU.LOAN_PAYMENT_HISTORY' | translate }}</a></li> 
+        <li><a routerLink="/flathistory">{{'MENU.FLAT_PAYMENT_HISTORY' | translate }}</a></li> 
+        <li><a routerLink="/paymentlinkdetails">{{'MENU.PAYMENT' | translate }}</a></li>
+        <li><a routerLink="/updateprofile">{{'MENU.UPDATE_PROFILE' | translate }}</a></li>
         <!-- <li><a routerLink="/login" class="login btn btn-outline btn-round"><span class="bh"></span>
             <span>login</span></a>
         </li> -->
         <li><a (click)="logout()" >
-          <span>Log Out</span></a>
+          <span>{{'MENU.LOGOUT' | translate }}</span></a>
       </li>
       </ul>
     </nav>

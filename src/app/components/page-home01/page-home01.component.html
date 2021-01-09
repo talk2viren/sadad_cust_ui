@@ -45,25 +45,25 @@
             <li class="nav-item">
               <!-- <a class="nav-link" href="#">Link</a> -->
               <div class="col-auto">
-                <button class="btn btn-default btn-rounded-54 shadow"><i class="material-icons">Due Pay</i></button>
+                <button class="btn btn-default btn-rounded-54 shadow"><i class="material-icons">{{'SUB.DUE_PAY' | translate }}</i></button>
             </div>
             </li>
             <li class="nav-item">
               <!-- <a class="nav-link" href="#">Link</a> -->
               <div class="col-auto">
-                <button class="btn btn-default btn-rounded-54 shadow"><i class="material-icons">We Pay</i></button>
+                <button class="btn btn-default btn-rounded-54 shadow"><i class="material-icons">{{'SUB.WE_PAY' | translate }}</i></button>
             </div>
             </li>
             <li class="nav-item active">
               <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
               <div class="col-auto">
-                <button class="btn btn-default btn-rounded-54 shadow"><i class="material-icons">Payment History</i></button>
+                <button class="btn btn-default btn-rounded-54 shadow"><i class="material-icons">{{'SUB.PAYMENT_HISTORY' | translate }}</i></button>
             </div>
             </li>
             <li class="nav-item">
               <!-- <a class="nav-link" href="#">Link</a> -->
               <div class="col-auto">
-                <button class="btn btn-default btn-rounded-54 shadow"><i class="material-icons">Log Out</i></button>
+                <button class="btn btn-default btn-rounded-54 shadow"><i class="material-icons">{{'MENU.LOGOUT' | translate }}</i></button>
             </div>
             </li>
             <li class="nav-item dropdown">
@@ -71,11 +71,11 @@
                 <i class="fa fa-th-list"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Due Pay</a>
-                <a class="dropdown-item" href="#">We Pay</a>
-                <a class="dropdown-item" href="#">Payment History</a>
+                <a class="dropdown-item" href="#">{{'SUB.DUE_PAY' | translate }}</a>
+                <a class="dropdown-item" href="#">{{'SUB.WE_PAY' | translate }}</a>
+                <a class="dropdown-item" href="#">{{'SUB.PAYMENT_HISTORY' | translate }}</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Log Out</a>
+                <a class="dropdown-item" href="#">{{'MENU.LOGOUT' | translate }}</a>
               </div>
             </li>
           </ul>
@@ -105,14 +105,14 @@
             <div class="col">
               <div class="row" style="height: 50%;">
                 <div class="col">
-              <h3 class="mb-0 font-weight-normal">KWD {{totalDue}}.00</h3>
-              <p class="text-mute">Total Due</p>
+              <h3 class="mb-0 font-weight-normal">{{'HOME.KWD' | translate }} {{totalDue}}.00</h3>
+              <p class="text-mute">{{'HOME.TOTAL_DUE' | translate }}</p>
                 </div>
             </div>
              <div class="row" style="height: 50%;">
                 <div class="col">
-              <h4 class="mb-0 font-weight-normal">KWD {{amounttopaid}}</h4>
-              <p class="text-mute small">Monthly amount to pay</p>
+              <h4 class="mb-0 font-weight-normal">{{'HOME.KWD' | translate }} {{amounttopaid}}</h4>
+              <p class="text-mute small">{{'HOME.MONTHLY_AMOUNT_TO_PAY' | translate }}</p>
                 </div>
             </div>
           </div>
@@ -129,11 +129,11 @@
             <div  class="card-body border-bottom">
                 <div class="row">
                     <div class="col">
-                        <h3 class="mb-0 font-weight-normal">KWD {{list.monthly_payment}}.00</h3>
-                        <p class="text-mute">Monthly EMI</p>
+                        <h3 class="mb-0 font-weight-normal">{{'HOME.KWD' | translate }} {{list.monthly_payment}}.00</h3>
+                        <p class="text-mute">{{'HOME.MONTHLY_EMI' | translate }}</p>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/pay',list.id,'loan']"><i class="material-icons">Pay</i></button>
+                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/pay',list.id,'loan']"><i class="material-icons">{{'GENERAL.PAY_BUTTON' | translate }}</i></button>
                     </div>
                 </div>
             </div>
@@ -142,11 +142,11 @@
             <div  class="card-body border-bottom">
                 <div class="row">
                     <div class="col">
-                        <h3 class="mb-0 font-weight-normal">KWD {{list.rent_price}}.00</h3>
-                        <p class="text-mute">Monthly Rent</p>
+                        <h3 class="mb-0 font-weight-normal">{{'HOME.KWD' | translate }} {{list.rent_price}}.00</h3>
+                        <p class="text-mute">{{'HOME.MONTHLY_RENT' | translate }}</p>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/pay',list.rent_id,'rent']"><i class="material-icons">Pay</i></button>
+                        <button class="btn btn-default btn-rounded-54 shadow" [routerLink]="['/pay',list.rent_id,'rent']"><i class="material-icons">{{'GENERAL.PAY_BUTTON' | translate }}</i></button>
                     </div>
                 </div>
             </div>

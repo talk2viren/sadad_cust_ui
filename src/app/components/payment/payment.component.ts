@@ -3,7 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpHeaders } from "@angular/common/http";
 import { UserService } from "../../../app/services/user.service";
-
+// Translate
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -21,9 +22,13 @@ export class PaymentComponent implements OnInit {
  constructor( private fb: FormBuilder,
               private router: Router,
               private route:ActivatedRoute,
-              private user:UserService) {}
+			  private user:UserService,
+			  private translate: TranslateService) {
+				translate.setDefaultLang('en');
+			  }
 
   ngOnInit() {
+	this.translate.use(localStorage.getItem('lang'));
     this.initLoanForm();
     this.route.params.subscribe(params=>{
 		console.log("Params : "+JSON.stringify(params));

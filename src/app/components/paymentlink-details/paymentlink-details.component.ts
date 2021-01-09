@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpHeaders } from "@angular/common/http";
 import { UserService } from "../../../app/services/user.service";
-
+// Translate
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-paymentlink-details',
@@ -32,9 +33,13 @@ public Products = [
 
   userpaymentlist=[]; 
   constructor(private router: Router,
-              private user:UserService) { }
+              private user:UserService,
+              private translate: TranslateService) {
+                translate.setDefaultLang('en');
+                }
 
   ngOnInit() {
+    this.translate.use(localStorage.getItem('lang'));
     this.loadUserPaymentLinkDetails();
   }
  

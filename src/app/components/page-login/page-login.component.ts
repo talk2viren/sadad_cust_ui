@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpHeaders } from "@angular/common/http";
 import { UserService } from "../../../app/services/user.service";
+// Translate
+import { TranslateService } from '@ngx-translate/core';
 
 declare let $: any;
 
@@ -19,7 +21,10 @@ export class PageLoginComponent implements OnInit {
 	
   constructor( private fb: FormBuilder,
                private router: Router,
-               private user:UserService) {}
+			   private user:UserService,
+			   private translate: TranslateService) {
+				translate.setDefaultLang('en');
+			   }
 
   initialization() {
     //======================
@@ -56,6 +61,18 @@ export class PageLoginComponent implements OnInit {
     this.initialization();
     
   }
+
+  changelang(language:string){
+	//console.log(language)
+	localStorage.setItem('lang', language);
+	// console.log(localStorage.getItem('lang'))
+	this.translate.use(localStorage.getItem('lang'));
+	//console.log(event.value)
+	//localStorage.setItem('lang',lang.value);
+	//this.translate.use(lang.value)
+	//window.location.reload();
+
+}
 
   initLoginForm() {
 		this.loginForm = this.fb.group({

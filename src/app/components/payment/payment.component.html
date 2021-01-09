@@ -24,16 +24,16 @@
     <div class="container">
       <form [formGroup]="paymentForm" autocomplete="off">
         <div class="form-group">
-          <label for="amount_paid">Amount Paid</label>
-          <input type="text" class="form-control"  placeholder="Enter amount" formControlName="amount_paid" required disabled>
-          <div *ngIf="isControlHasError('amount_paid','required')" class="alert alert-danger">Amount is Required</div>
+          <label for="amount_paid">{{'PAYLOAN.AMOUNT_PAID' | translate }}</label>
+          <input type="text" class="form-control"  placeholder="{{'VALIDATION.ENTER_AMOUNT' | translate }}" formControlName="amount_paid" required disabled>
+          <div *ngIf="isControlHasError('amount_paid','required')" class="alert alert-danger">{{'VALIDATION.Amount_REQUIRED_FIELD' | translate }}</div>
         </div>
         <div class="form-group">
-          <label for="descrpition">Description</label>
-          <input type="text" class="form-control" placeholder="Enter Description" formControlName="description" required>
-          <div *ngIf="isControlHasError('description','required')" class="alert alert-danger">Description is Required</div>
+          <label for="descrpition">{{'LOANHISTORY.DESCRIPITION' | translate }}</label>
+          <input type="text" class="form-control" placeholder="{{'VALIDATION.ENTER_DESCRIPTION' | translate }}" formControlName="description" required>
+          <div *ngIf="isControlHasError('description','required')" class="alert alert-danger">{{'VALIDATION.DESCRIPTION_REQUIRED_FIELD' | translate }}</div>
         </div>
-       <button type="submit" class="btn btn-primary" (click)="submit()">Send</button>
+       <button type="submit" class="btn btn-primary" (click)="submit()">{{'GENERAL.CHECKOUT_BUTTON' | translate }}</button>
       </form>
     </div>
   </section>
