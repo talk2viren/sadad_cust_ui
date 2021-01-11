@@ -35,9 +35,12 @@ export class UpdateuserComponent implements OnInit {
 			console.log(data.result)
 			
 			for(var i=0;i< data.result.length; i++){
-				
+				// localStorage.setItem('image', data.result[i].image);
+				// console.log(localStorage.getItem('image'))
 				//console.log(data.result[i].id)
 				if(data.result[i].id==this.id){
+					localStorage.setItem('image', data.result[i].image);
+                     console.log(data.result[i].image)
 					this.userForm.patchValue({
 					  fullname: data.result[i].fullname,
 					  email: data.result[i].email,

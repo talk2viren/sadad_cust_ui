@@ -15,6 +15,7 @@ export class PageHome01Component implements OnInit {
   loanlist:any;
   amounttopaid:any;
   rentList:any;
+  image:any;
   constructor(private user:UserService,
              private translate: TranslateService) {
               translate.setDefaultLang('en');
@@ -154,6 +155,8 @@ export class PageHome01Component implements OnInit {
   }
 
   ngOnInit() {
+    this.image=localStorage.getItem('image')
+    console.log(localStorage.getItem('image'))
     this.translate.use(localStorage.getItem('lang'));
     this.initialization();
     this.GetuserDetail();
